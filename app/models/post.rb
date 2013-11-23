@@ -1,10 +1,9 @@
 require 'json'
 require 'mongoid'
-#require 'mongoid_fulltext'
 
 class Post
 	include Mongoid::Document
-	#include Mongoid::FullTextSearch
+	
   field :title, :type => String
 	field :body, :type => String
 	field :published_on, :type => DateTime
@@ -12,8 +11,6 @@ class Post
 	field :created_at, :type => DateTime
 	field :slug, :type => String
 	field :category, :type => String
-
-	#fulltext_search_in :title, :body
 
   def get_summary()
     self.body.gsub(/(<[^>]*>)|\n|\t/,'')[0..199] + '...'
@@ -73,12 +70,5 @@ class Post
                .skip(skip_count).take(limit)
   end
 
- #  def self.search_text(query)
-	# 	Post.fulltext_search(query)
- #  end
-
-	# def self.reindex
-	# 	Post.update_ngram_index
-	# end
 end
 
