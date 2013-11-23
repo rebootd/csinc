@@ -25,6 +25,12 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :production do
+  #gem 'pg'
+  #new relic app monitoring info
+  gem 'newrelic_rpm', "~> 3.5"
+end
+
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
