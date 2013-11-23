@@ -4,7 +4,6 @@
 .DS_Store
 .ruby-gemset
 .ruby-version
-*.lock
 *.log
 log/
 tmp/
