@@ -75,3 +75,6 @@
     =javascript_include_tag "application"
     =yield :scripts
     =yield :javascript
+    %script{:src=>"//static.getclicky.com/js", :type=>"text/javascript"}
+    :javascript 
+      try{ clicky.init(100678440); }catch(e){}
