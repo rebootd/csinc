@@ -4,7 +4,7 @@ angular.module('csinc.resources.posts', [])
     	var Posts = {};
         Posts.list = function (pageNum, callback) {
         	if(!pageNum) { pageNum = 1; }
-            $http({ method: 'GET', url: '/blog/posts.json?page=' + pageNum }).
+            $http({ method: 'GET', url: '/blog/posts.json?page=' + pageNum, cache: true }).
                 success(function (data, status, headers, config) {
                     callback(data);
                 }).
@@ -14,7 +14,7 @@ angular.module('csinc.resources.posts', [])
         };
 
         Posts.get = function (slug, callback) {
-        	$http({ method: 'GET', url: '/posts/get.json?slug=' + slug }).
+        	$http({ method: 'GET', url: '/posts/get.json?slug=' + slug, cache: true }).
                 success(function (data, status, headers, config) {
                     callback(data);
                 }).
