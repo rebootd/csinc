@@ -9,8 +9,12 @@ csinc.config(['$routeProvider', function ($routeProvider) {
 }]);
 
 csinc.controller('AppCtrl', ['$scope', 'Posts', function ($scope, Posts) { 
+        $scope.page = 'home';
+
+        $scope.setPage = function (page) {$scope.page = page;};
+
         (function init() { 
-            console.log('init');
+            console.log('init AppCtrl');
             // Posts.list(1, function(data) {
             //     console.log(JSON.stringify(data));
             // });
@@ -21,8 +25,10 @@ csinc.controller('AppCtrl', ['$scope', 'Posts', function ($scope, Posts) {
     }]);
 
 csinc.controller('BlogCtrl', ['$scope', 'Posts', function ($scope, Posts) { 
+        $scope.list = [];
+        
         (function init() { 
-            console.log('init');
+            console.log('init BlogCtrl');
             // Posts.list(1, function(data) {
             //     console.log(JSON.stringify(data));
             // });
