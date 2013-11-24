@@ -27,6 +27,7 @@
     %script{:src => "/js/angular-resource.min.js"}
     %script{:src => "/js/angular-route.min.js"}
     %script{:src => "/js/angular-sanitize.min.js"}
+    %script{:src => "/app/wcAngularOverlay.js"}
     %script{:src => "/app/posts.resource.js"}
     %script{:src => "/app/csinc.app.js"}
     = yield :head
@@ -60,6 +61,9 @@
     .container
       / = yield 
       %span{"ng-view"=>""}
+
+      %div{ "wc-overlay"=>"",  "wc-overlay-delay"=>"300"}
+        %img{:src=>"/images/spinner.gif", :style=>"height:10;"} Loading...
 
     / /container    
 

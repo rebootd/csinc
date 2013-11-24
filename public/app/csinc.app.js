@@ -1,4 +1,4 @@
-var csinc = angular.module('csinc', ['ngRoute', 'ngSanitize', 'csinc.resources.posts']);
+var csinc = angular.module('csinc', ['ngRoute', 'ngSanitize', 'wc.Directives', 'csinc.resources.posts']);
 
 csinc.config(['$routeProvider', function ($routeProvider) {
    $routeProvider.when('/home', { templateUrl: '/app/views/home.html' })
@@ -22,7 +22,6 @@ csinc.controller('AppCtrl', ['$scope', '$location', function ($scope, $location,
             return '/#/blog/posts/' + ar[0] + '/' + ar[1] + '/' + post.slug;
         };
         $scope.isActive = function(path) {
-            console.log($location.$$path);
             return $location.$$path.substring(0,path.length) == path;
         };
 
