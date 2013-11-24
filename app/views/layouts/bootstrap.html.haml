@@ -42,17 +42,17 @@
           %a.brand{:href => '/'} csinc
           .nav-collapse.collapse
             %ul.nav
-              %li{"ng-class"=>"{'active':page=='home'}" }
-                %a{:href=>'/#/home', "ng-click"=>"setPage('home')"} home
+              %li{"ng-class"=>"{'active':isActive('/home')}" }
+                %a{:href=>'/#/home'} home
 
-              %li{"ng-class"=>"{'active':page=='about'}" }
-                %a{:href=>'/#/about', "ng-click"=>"setPage('about')"} about
+              %li{"ng-class"=>"{'active':isActive('/about')}" }
+                %a{:href=>'/#/about'} about
 
-              %li{"ng-class"=>"{'active':page=='contact'}" }
-                %a{:href=>'/#/contact', "ng-click"=>"setPage('contact')"} contact
+              %li{"ng-class"=>"{'active':isActive('/contact')}" }
+                %a{:href=>'/#/contact'} contact
 
-              %li{"ng-class"=>"{'active':page=='blog'}" }
-                %a{:href=>'/#/blog', "ng-click"=>"setPage('blog')"} blog
+              %li{"ng-class"=>"{'active':isActive('/blog')}" }
+                %a{:href=>'/#/blog'} blog
 
               %li
                 %a{:href=>'//github.com/rebootd'} github ->

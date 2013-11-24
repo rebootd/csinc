@@ -1,3 +1,8 @@
 == README
 
 This is the source for http://computeristsolutions.com. 
+
+
+== Technology Stack
+Hosted on Heroku, built with Ruby on Rails 4.x, AngularJS 1.x, and MongoDB (hosted on MongoLab).
+

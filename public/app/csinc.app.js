@@ -9,7 +9,7 @@ csinc.config(['$routeProvider', function ($routeProvider) {
    .otherwise({ redirectTo: '/home' });
 }]);
 
-csinc.controller('AppCtrl', ['$scope', function ($scope, Posts) { 
+csinc.controller('AppCtrl', ['$scope', '$location', function ($scope, $location, Posts) { 
         $scope.page = 'home';
 
         $scope.setPage = function (page) {$scope.page = page;};
@@ -20,6 +20,10 @@ csinc.controller('AppCtrl', ['$scope', function ($scope, Posts) {
         $scope.getLink = function (post) {
             var ar = $scope.getDateArray(post.published_on);            
             return '/#/blog/posts/' + ar[0] + '/' + ar[1] + '/' + post.slug;
+        };
+        $scope.isActive = function(path) {
+            console.log($location.$$path);
+            return $location.$$path.substring(0,path.length) == path;
         };
 
         (function init() { 
@@ -49,10 +53,13 @@ csinc.controller('BlogCtrl', ['$scope', 'Posts', function ($scope, Posts) {
 csinc.controller('PostCtrl', ['$scope', '$routeParams', 'Posts', function ($scope, $routeParams, Posts) { 
         $scope.post = {};
         $scope.slug = '';
+        $scope.monthNames = [ "January", "February", "March", "April", "May", "June", 
+            "July", "August", "September", "October", "November", "December" ];
 
         $scope.formatDate = function(dt) {
+            if(!dt) {return '';}
             var ar = dt.substring(0, dt.indexOf('T')).split('-');
-            return ar[2] + '-' + ar[1] + '-' + ar[0];
+            return ar[2] + ' ' + $scope.monthNames[parseInt(ar[1])] + ' ' + ar[0];
         };
 
         (function init() { 
