@@ -1,6 +1,3 @@
-<h2>
-Hello.
-</h2>
-<p>
-We build software for humans.
-</p>
+<h2>{{post.title}}</h2>
+<p>{{formatDate(post.published_on)}}</p>
+<p><span ng-bind-html="post.body"></span></p>

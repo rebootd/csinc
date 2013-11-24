@@ -1,6 +1,9 @@
-<h2>
-Hello.
-</h2>
-<p>
-We build software for humans.
+<h2>Recent Articles</h2>
+
+<p ng-repeat="post in list">
+    <b><a href="{{getLink(post)}}">{{post.title}}</a></b>
+    <br/>
+    <i>Published on {{post.published_on}}</i>
+    <br/>
+    {{trimmedBody(post.body)}}
 </p>

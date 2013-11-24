@@ -1,6 +1,7 @@
 Csinc::Application.routes.draw do
   get "posts/index"
   get "posts/show"
+  get "posts/get"
   root 'home#index'
 
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

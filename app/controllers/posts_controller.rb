@@ -39,5 +39,13 @@ class PostsController < ApplicationController
     end
     respond_with @post
   end
+
+  def get
+    response.headers["Expires"] = "#{10.minutes.from_now}"
+    @post = Post.first(:conditions => { :id => params[:id]}) if params[:id]
+    @post ||= Post.find_by_slug(params[:slug].downcase, true )
+
+    respond_with @post
+  end
   
 end
