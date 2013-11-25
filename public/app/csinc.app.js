@@ -1,12 +1,18 @@
 var csinc = angular.module('csinc', ['ngRoute', 'ngSanitize', 'wc.Directives', 'csinc.resources.posts']);
 
 csinc.config(['$routeProvider', function ($routeProvider) {
-   $routeProvider.when('/home', { templateUrl: '/app/views/home.html' })
-   $routeProvider.when('/about', { templateUrl: '/app/views/about.html' })
-   $routeProvider.when('/contact', { templateUrl: '/app/views/contact.html' })
-   $routeProvider.when('/blog', { templateUrl: '/app/views/blog.html', controller: 'BlogCtrl' })
-   $routeProvider.when('/blog/posts/:year/:month/:slug', { templateUrl: '/app/views/post.html', controller: 'PostCtrl' })
+   $routeProvider.when('/home', { title: 'home', templateUrl: '/app/views/home.html' })
+   $routeProvider.when('/about', { title: 'about', templateUrl: '/app/views/about.html' })
+   $routeProvider.when('/contact', { title: 'contact', templateUrl: '/app/views/contact.html' })
+   $routeProvider.when('/blog', { title: 'blog', templateUrl: '/app/views/blog.html', controller: 'BlogCtrl' })
+   $routeProvider.when('/blog/posts/:year/:month/:slug', { title: ':slug', templateUrl: '/app/views/post.html', controller: 'PostCtrl' })
    .otherwise({ redirectTo: '/home' });
+}]);
+
+csinc.run(['$location', '$rootScope', function($location, $rootScope) {
+    $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+        $rootScope.title = current.$$route.title;
+    });
 }]);
 
 csinc.factory('DateService', ['$http', function ($http) {

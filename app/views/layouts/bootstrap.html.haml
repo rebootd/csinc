@@ -8,7 +8,7 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %meta{:content => "", :name => "description"}/
     %meta{:content => "", :name => "author"}/
-    %title Computerist Solutions Inc | #{yield :title || ""}
+    %title{"ng-bind"=>"'Computerist Solutions - ' + title"} Computerist Solutions Inc
     
     / Le styles
     %link{:href => "/css/bootstrap.css", :rel => "stylesheet"}/
