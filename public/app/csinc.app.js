@@ -33,8 +33,8 @@ csinc.controller('AppCtrl', ['$scope', '$location', 'Posts', 'DateService', func
 
         $scope.$on('$viewContentLoaded', function(event) {
             setTimeout(function() {
-                // console.log($location.$$absUrl);
-                clicky.log($location.$$absUrl);
+                //console.log('#'+$location.$$path);
+                clicky.log('#'+$location.$$path);
             }, 100);
         });
 
