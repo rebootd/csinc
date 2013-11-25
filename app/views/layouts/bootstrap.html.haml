@@ -54,9 +54,6 @@
 
               %li{"ng-class"=>"{'active':isActive('/blog')}" }
                 %a{:href=>'/#/blog'} blog
-
-              %li
-                %a{:href=>'//github.com/rebootd'} github ->
           / /.nav-collapse
     .container
       / = yield 
@@ -71,17 +68,14 @@
       %div.container
         %p.muted.credit
           %div
-            %a{:href=>'http://sunlightfoundation.com/'} sunlight foundation
-            | 
-            %a{:href=>'http://openstates.org/'} open states
-            | 
-            %a{:href=>'http://data.influenceexplorer.com/'} influence
-          %div
-            %a{:href=>'http://www.wolframalpha.com/'} wolfram alpha
-            | 
-            %a{:href=>'http://slashdot.org/'} slashdot
-            | 
-            %a{:href=>'https://lobste.rs/'} lobste.rs
+            %a{:href=>'https://github.com/rebootd'}
+              %img{:src=>"/images/github.png"}  &nbsp;github
+            &nbsp;|&nbsp;
+            %a{:href=>'https://linkedin.com/in/rebootd'}
+              %img{:src=>"/images/linkedin.png"}  &nbsp;linkedin
+            &nbsp;|&nbsp;
+            %a{:href=>'https://twitter.com/rebootd'}
+              %img{:src=>"/images/twitter.png"}  &nbsp;twitter
           %div
             %a{:href=>'https://github.com/rebootd/csinc'} source for this site
 
