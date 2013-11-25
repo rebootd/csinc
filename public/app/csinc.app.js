@@ -5,7 +5,7 @@ csinc.config(['$routeProvider', function ($routeProvider) {
    $routeProvider.when('/about', { title: 'about', templateUrl: '/app/views/about.html' })
    $routeProvider.when('/contact', { title: 'contact', templateUrl: '/app/views/contact.html' })
    $routeProvider.when('/blog', { title: 'blog', templateUrl: '/app/views/blog.html', controller: 'BlogCtrl' })
-   $routeProvider.when('/blog/posts/:year/:month/:slug', { title: slug, templateUrl: '/app/views/post.html', controller: 'PostCtrl' })
+   $routeProvider.when('/blog/posts/:year/:month/:slug', { title: 'post', templateUrl: '/app/views/post.html', controller: 'PostCtrl' })
    .otherwise({ redirectTo: '/home' });
 }]);
 
@@ -108,7 +108,7 @@ csinc.controller('BlogCtrl', ['$scope', 'Posts', 'DateService', function ($scope
         })(); 
     }]);
 
-csinc.controller('PostCtrl', ['$scope', '$routeParams', 'Posts', 'DateService', function ($scope, $routeParams, Posts, DateService) { 
+csinc.controller('PostCtrl', ['$rootScope', '$scope', '$routeParams', 'Posts', 'DateService', function ($rootScope, $scope, $routeParams, Posts, DateService) { 
         $scope.post = {};
         $scope.slug = '';
         $scope.monthNames = [ "January", "February", "March", "April", "May", "June", 
@@ -123,6 +123,7 @@ csinc.controller('PostCtrl', ['$scope', '$routeParams', 'Posts', 'DateService', 
             $scope.slug = typeof($routeParams.slug) == "undefined" ? 'slug' : $routeParams.slug;
             Posts.get($scope.slug, function(data) {
                 $scope.post = data;
+                $rootScope.title = $scope.post.title;
             });
         })(); 
     }]);
