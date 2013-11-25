@@ -5,7 +5,7 @@ csinc.config(['$routeProvider', function ($routeProvider) {
    $routeProvider.when('/about', { title: 'about', templateUrl: '/app/views/about.html' })
    $routeProvider.when('/contact', { title: 'contact', templateUrl: '/app/views/contact.html' })
    $routeProvider.when('/blog', { title: 'blog', templateUrl: '/app/views/blog.html', controller: 'BlogCtrl' })
-   $routeProvider.when('/blog/posts/:year/:month/:slug', { title: ':slug', templateUrl: '/app/views/post.html', controller: 'PostCtrl' })
+   $routeProvider.when('/blog/posts/:year/:month/:slug', { title: slug, templateUrl: '/app/views/post.html', controller: 'PostCtrl' })
    .otherwise({ redirectTo: '/home' });
 }]);
 
