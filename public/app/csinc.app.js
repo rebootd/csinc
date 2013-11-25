@@ -31,6 +31,13 @@ csinc.factory('DateService', ['$http', function ($http) {
 csinc.controller('AppCtrl', ['$scope', '$location', 'Posts', 'DateService', function ($scope, $location, Posts, DateService) { 
         $scope.page = 'home';
 
+        $scope.$on('$viewContentLoaded', function(event) {
+            setTimeout(function() {
+                // console.log($location.$$absUrl);
+                clicky.log($location.$$absUrl);
+            }, 100);
+        });
+
         $scope.setPage = function (page) {$scope.page = page;};
         $scope.getDateArray = function(postDate) {
             return DateService.getDateArray(postDate);
