@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby "2.0.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.2'
+gem 'rails', '4.0.1'
 gem 'rails_12factor', group: :production
 
 #gem 'sqlite3'
@@ -15,7 +15,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'haml'
 gem 'unicorn'
-gem 'activemodel', '~> 4.0.2'
+gem 'activemodel', '~> 4.0.1'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext'
 #gem 'mongoid_fulltext'
