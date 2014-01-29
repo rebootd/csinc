@@ -147,7 +147,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   mongoid!
-  newrelic_rpm (~> 3.5)
+  newrelic_rpm
   rails (= 4.0.1)
   rails_12factor
   sass-rails (~> 4.0.0)

@@ -28,7 +28,7 @@ end
 group :production do
   #gem 'pg'
   #new relic app monitoring info
-  gem 'newrelic_rpm', "~> 3.5"
+  gem 'newrelic_rpm' 
 end
 
 # Use Capistrano for deployment
