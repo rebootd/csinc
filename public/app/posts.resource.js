@@ -9,6 +9,7 @@ angular.module('csinc.resources.posts', [])
                     callback(data);
                 }).
                 error(function (data, status, headers, config) {
+                    // console.log('posts error');
                     callback({ IsValid: false, Message: 'Error: ' + status });
                 });
         };
