@@ -1,5 +1,18 @@
 <h2>Contact.</h2>
-<p>Phone: +1 480-270-4578</p>
+
 <p>
-    Email: <a href='mailto:rebootd@computeristsolutions.com'>rebootd [at] computeristsolutions.com</a>
+  Feel free to contact me for potential projects or even just an opinion. I'll give you an honest answer either way.
 </p>
+
+<p>Phone: <span id="phone">+1 480-270-4578</span></p>
+<p>
+    Email: <a id="emailto" href=''>rebootd [at] computeristsolutions.com</a>
+</p>
+
+<script>
+	// cheap scraping prevention
+	var p = '+1 480-270-4578';
+	$('#phone').val(p)
+	var em = 'mailto:';em += 'rebootd';em+='@';em+='computeristsolutions';em+='.com';
+	$('#emailto').attr('href', em)
+</script>
