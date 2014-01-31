@@ -33,7 +33,6 @@ production:
       username: <%= ENV['MONGOID_USER'] %>
       password: <%= ENV['MONGOID_PASSWORD'] %>
       options:
-        consistency: :strong
         max_retries: 1
         retry_interval: 0
         skip_version_check: true
