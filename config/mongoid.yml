@@ -7,7 +7,10 @@ development:
       username: <%= ENV['MONGOID_USER'] %>
       password: <%= ENV['MONGOID_PASSWORD'] %>
       options:
-  options:
+        max_retries: 1
+        retry_interval: 0
+        #skip_version_check: true
+        #safe: true
 
 test:
   sessions:
@@ -18,11 +21,10 @@ test:
       username: <%= ENV['MONGOID_USER'] %>
       password: <%= ENV['MONGOID_PASSWORD'] %>
       options:
-        consistency: :strong
         max_retries: 1
         retry_interval: 0
-        skip_version_check: true
-        safe: true
+        #skip_version_check: true
+        #safe: true
 
 production:
   sessions:
