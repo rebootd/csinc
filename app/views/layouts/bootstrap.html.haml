@@ -9,7 +9,7 @@
     %meta{:content => "", :name => "description"}/
     %meta{:content => "", :name => "author"}/
     %title{"ng-bind"=>"'Computerist Solutions - ' + title"} Computerist Solutions Inc
-    
+
     / Le styles
     %link{:href => "/css/bootstrap.css", :rel => "stylesheet"}/
     %link{:href => "/css/bootstrap-override.css", :rel => "stylesheet"}/
@@ -66,20 +66,20 @@
                 %a{:href=>'/#/blog'} blog
           / /.nav-collapse
     .container
-      / = yield 
+      / = yield
       %span{"ng-view"=>""}
 
       %div{ "wc-overlay"=>"",  "wc-overlay-delay"=>"300"}
         %img{:src=>"/images/spinner.gif", :style=>"height:10;"} Loading...
 
-    / /container    
+    / /container
 
     %div#footer
       %div.container
         %p.muted.credit
           %div
             %a{:href=>'https://github.com/rebootd'}
-              %img{:src=>"/images/github.png"}  &nbsp;github            
+              %img{:src=>"/images/github.png"}  &nbsp;github
             &nbsp;|&nbsp;
             %a{:href=>'http://webchat.freenode.net?channel=phxtech'}
               &nbsp;irc:rebootd
@@ -89,15 +89,3 @@
     =javascript_include_tag "application"
     =yield :scripts
     =yield :javascript
-    %script{:src=>"//static.getclicky.com/js", :type=>"text/javascript"}
-    :javascript 
-      var clicky_site_ids = clicky_site_ids || [];
-      clicky_site_ids.push(100678440);
-      (function() {
-        var s = document.createElement('script');
-        s.type = 'text/javascript';
-        s.async = true;
-        s.src = '//static.getclicky.com/js';
-        ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-      })();
-

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.0.0"
+ruby "2.1.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
@@ -28,7 +28,7 @@ end
 group :production do
   #gem 'pg'
   #new relic app monitoring info
-  gem 'newrelic_rpm' 
+  gem 'newrelic_rpm'
 end
 
 # Use Capistrano for deployment
