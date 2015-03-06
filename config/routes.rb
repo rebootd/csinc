@@ -9,13 +9,14 @@ Csinc::Application.routes.draw do
   get 'contact' => 'home#contact', as: :contact
 
   get "feed/rss" => 'feed#rss'
-  scope "/blog" do 
+  get "feed/all" => 'feed#all'
+  scope "/blog" do
     resources :posts
   end
   get 'blog' => 'posts#index'
   # match 'blog/categories/:name' => 'categories#show', :as => :full_category
   get '/sitemap.xml' => 'sitemap#index'
-  
+
   get 'blog/syndication.axd' => 'feed#rss', :as => :rss_posts
   get 'blog/author/*other' => 'home#about'
   get 'blog/posts/:year/:month/:day/:slug' => 'posts#show'
