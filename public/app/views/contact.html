@@ -6,13 +6,16 @@
 
 <p>Phone: <span id="phone">+1 480-270-4578</span></p>
 <p>
-    Email: <a id="emailto" href=''>rebootd [at] computeristsolutions.com</a>
+    Email: <a class="emailto" href=''>rebootd [at] csinc.ninja</a>
+</p>
+<p>
+    Or: <a class="emailto" href=''>rebootd [at] computeristsolutions.com</a>
 </p>
 
 <script>
 	// cheap scraping prevention
 	var p = '+1 480-270-4578';
 	$('#phone').val(p)
-	var em = 'mailto:';em += 'rebootd';em+='@';em+='computeristsolutions';em+='.com';
-	$('#emailto').attr('href', em)
+	var em = 'mailto:';em += 'rebootd';em+='@';em+='csinc';em+='.ninja';
+	$('.emailto').attr('href', em)
 </script>
