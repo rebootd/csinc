@@ -14,7 +14,9 @@ gem 'turbolinks'
 gem 'jbuilder' #, '~> 1.2'
 
 gem 'haml'
-gem 'unicorn'
+# gem 'unicorn'
+gem 'puma'
+
 gem 'activemodel' #, '~> 4.0.1'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext'
