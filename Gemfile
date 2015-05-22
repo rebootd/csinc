@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.1.2"
+ruby "2.2.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
@@ -14,7 +14,9 @@ gem 'turbolinks'
 gem 'jbuilder' #, '~> 1.2'
 
 gem 'haml'
-gem 'unicorn'
+# gem 'unicorn'
+gem 'puma'
+
 gem 'activemodel' #, '~> 4.0.1'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext'
