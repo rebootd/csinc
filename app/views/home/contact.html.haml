@@ -1,8 +1,25 @@
-#{content_for :title, "Ways to contact"}
 %h2 Contact.
 %p
-  Phone: +1 480-270-4578
-
+  Feel free to contact us for potential projects or even just an opinion. You will get an honest answer either way.
+/ %p
+/   We can also connect you with our friends in Design, Development, and Services. Such as
+/   %a{:href=>"http://mobileaze.com"} mobileaze
+/   ,
+/   %a{:href=>"http://wearetrue.com"} TRUE
+/   ,
+/   %a{:href=>"http://icedev.com"} ice dev
+/   , or
+/   %a{:href=>"http://brushfireinteractive.com"} Brushfire Interactive.
+%p
+  Phone:
+  %span#phone +1 480-270-4578
 %p
   Email:
-  %a{:href=>'mailto:rebootd@computeristsolutions.com'} rebootd [at] computeristsolutions.com
+  %a.emailto{:href => ""} rebootd [at] computerist.co
+
+:javascript
+  // cheap scraping prevention
+  var p = '+1 480-270-4578';
+  $('#phone').val(p)
+  var em = 'mailto:';em += 'rebootd';em+='@';em+='computerist';em+='.co';
+  $('.emailto').attr('href', em)

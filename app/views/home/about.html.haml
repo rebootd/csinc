@@ -1,12 +1,60 @@
-#{content_for :title, "About rebootd"}
-%h2
-  Hi, I am rebootd.
+%h2 About
+%div
+  %b What we do
+  %p
+    We solve problems with software and sometime hardware.
+  %p
+    We build web, mobile, and desktop software solutions. We can design, architect, coordinate, and develop the solution to your need. Sometimes this means building a new system, sometimes it means 'rescuing' an existing system. It always means the best possible solution for what you need, and easy people to work with.
+
+%b Most recent technologies
 %p
-  I build software based solutions to business problems. 
-  %a{:href=>'/contact'} Contact 
-  me for more information.
+  Android, Ruby on Rails, Javascript, jQuery, JSON, SQL, Cucumber, PhantomJS, Postgres, git, Github, Heroku
+%p
+  Also Recently used: Node, MongoDB, AngularJS, CoffeeScript, .Net, React, MongoDB, SQL
+
+%p
+  There's a lot of interest in Android lately. Here are a few of the Play store apps:
+  %br/
+  %ul.reflist
+    %li
+      %a{:href => "https://play.google.com/store/apps/details?id=com.showtime.dexter", :target => "_blank"} Dexter
+    %li
+      %a{:href => "https://play.google.com/store/apps/details?id=weeklysales.adamsfarms.com.adamsfarmsweeklysaleads", :target => "_blank"} Adams Farms
+    %li
+      %a{:href => "https://play.google.com/store/apps/details?id=com.noticesoftware.FanSided", :target => "_blank"} FanSided
+    %li
+      %a{:href => "https://play.google.com/store/apps/details?id=cc.updatable.doubleagent", :target => "_blank"} X3Watch
+    %li
+      %a{:href => "https://play.google.com/store/apps/details?id=com.fantasyalarm.fantasyalarmmlb", :target => "_blank"} FantasyAlarm Baseball
+    %li
+      %a{:href => "https://play.google.com/store/apps/details?id=com.fantasyalarm.fantasyalarmnfl", :target => "_blank"} FantasyAlarm Football
+    %li
+      %a{:href => "https://play.google.com/store/apps/details?id=com.givr.givrandroid", :target => "_blank"} Givr
+    %li
+      %a{:href => "https://play.google.com/store/apps/details?id=com.mobileaze.ripil", :target => "_blank"} Ripil
+    %li
+      %a{:href => "https://play.google.com/store/apps/details?id=com.aclipsa.messenger", :target => "_blank"} Aclipsa
+
+
+
+%p
+  Most recent Ruby on Rails site:
+  %a{:href => "http://www.mycounterpane.com/", :target => "_blank"} mycounterpane.com
+  (new site in stealth mode)
+  %br/
+  Most recent Node project:
+  %a{:href => "https://octoblu.com/", :target => "_blank"} octoblu.com
+  %br/
+  Most recent .Net client:
+  %a{:href => "http://srgtech.com", :target => "_blank"} srg tech
+
 
 %div
-  %b Things I have been using lately
+  %b Open Source
   %p
-    ASP.Net MVC, .Net Framework, jQuery, AngularJS, Javascript, SQL, Ruby on Rails, MongoDB, Postgres, TFS, git, Heroku, Github, NodeJS
+    I have a few things on github, including the
+    = succeed "," do
+      %a{:href => "https://github.com/rebootd/csinc"} source for this site
+    but my biggest OSS success was as one of the original coders behind
+    = succeed "." do
+      %a{:href => "https://github.com/schambers/fluentmigrator", :target => "_blank"} FluentMigrator
