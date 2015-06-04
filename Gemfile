@@ -22,6 +22,7 @@ gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext'
 #gem 'mongoid_fulltext'
 gem 'responders', '~> 2.0'
+gem "font-awesome-rails"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

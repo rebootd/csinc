@@ -10,35 +10,14 @@
     %meta{:content => "", :name => "author"}/
     %title{"ng-bind"=>"'Computerist Solutions - ' + title"} Computerist Solutions Inc
 
-    / Le styles
-    %link{:href => "/css/bootstrap.css", :rel => "stylesheet"}/
-    %link{:href => "/css/bootstrap-override.css", :rel => "stylesheet"}/
-    :css
-      body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
-        %link{:href => "/css/bootstrap-responsive.css", :rel => "stylesheet"}/
 
     %link{:href=>stylesheet_link_tag(:manage, media: "all")}
-
-    / HTML5 shim, for IE6-8 support of HTML5 elements
-    /[if lt IE 9]
-      %script{:src => "/js/html5shiv.js"}
-    / Fav and touch icons
     %link{:href => "/favicon.ico", :rel => "shortcut icon"}/
     %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"}
     = yield :head
     = csrf_meta_tags
-    :javascript
-      // @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt GPL-v3-or-Later
-      (function(){
-        var e = document.createElement('script'); e.type='text/javascript'; e.async = true;
-        e.src = document.location.protocol + '//d1agz031tafz8n.cloudfront.net/thedaywefightback.js/widget.min.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(e, s);
-      })();
-      // @license-end
 
-  %body{"ng-controller"=>"AppCtrl"}
+  %body
     .navbar.navbar-inverse.navbar-fixed-top
       .navbar-inner
         .container
