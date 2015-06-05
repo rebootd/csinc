@@ -1,18 +1,20 @@
 !!!
 %html{:lang => "en"}
   %head
+    %meta{:name=>'keywords', :content=>'custom software,custom programming,HTML,CSS,XML,.net,Ruby,Rails,JavaScript'}
+    %meta{ :name=>'description', :content=>'Computerist Solutions is a customer software development company specializing in business needs of small to medium sized business'}
+
     %meta{:charset => "utf-8"}
     %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
     %meta{:content => "", :name => "description"}
     %meta{:content => "", :name => "author"}
-    %title Agency - Start Bootstrap Theme
-    / Bootstrap Core CSS
+    %title Computerist Solutions
     %link{:href => "/assets/bootstrap.min.css", :rel => "stylesheet"}
-    / Custom CSS
     %link{:href => "/assets/agency.css", :rel => "stylesheet"}
-    / Custom Fonts
-    %link{:href => "font-awesome//assets/font-awesome.min.css", :rel => "stylesheet", :type => "text/css"}
+    / %link{:href => "/font-awesome/assets/font-awesome.min.css", :rel => "stylesheet", :type => "text/css"}
+    %link{:rel=>"stylesheet", :href=>"//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"}
+
     %link{:href => "https://fonts.googleapis.com/css?family=Montserrat:400,700", :rel => "stylesheet", :type => "text/css"}
     %link{:href => "https://fonts.googleapis.com/css?family=Kaushan+Script", :rel => "stylesheet", :type => "text/css"}
     %link{:href => "https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic", :rel => "stylesheet", :type => "text/css"}
@@ -33,7 +35,7 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand.page-scroll{:href => "#page-top"} Start Bootstrap
+          %a.navbar-brand.page-scroll{:href => "#page-top"} Computerist Solutions
         / Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav.navbar-right
@@ -46,8 +48,6 @@
             %li
               %a.page-scroll{:href => "#about"} About
             %li
-              %a.page-scroll{:href => "#team"} Team
-            %li
               %a.page-scroll{:href => "#contact"} Contact
         / /.navbar-collapse
       / /.container-fluid
@@ -55,7 +55,7 @@
     %header
       .container
         .intro-text
-          .intro-lead-in Welcome To Our Studio!
+          .intro-lead-in Welcome To Our Site!
           .intro-heading It's Nice To Meet You
           %a.page-scroll.btn.btn-xl{:href => "#services"} Tell Me More
     / Services Section
@@ -64,33 +64,35 @@
         .row
           .col-lg-12.text-center
             %h2.section-heading Services
-            %h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
+            %h3.section-subheading.text-muted Reliable, Practical, and Comprehensive
         .row.text-center
           .col-md-4
             %span.fa-stack.fa-4x
               %i.fa.fa-circle.fa-stack-2x.text-primary
-              %i.fa.fa-shopping-cart.fa-stack-1x.fa-inverse
-            %h4.service-heading E-Commerce
-            %p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
+              %i.fa.fa-tablet.fa-stack-1x.fa-inverse
+            %h4.service-heading Mobile
+            %p.text-muted We focus on Android, whether it't building your cool idea or rescuing an app from failling. We have iOS friends and can connect you.
           .col-md-4
             %span.fa-stack.fa-4x
               %i.fa.fa-circle.fa-stack-2x.text-primary
               %i.fa.fa-laptop.fa-stack-1x.fa-inverse
-            %h4.service-heading Responsive Design
-            %p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
+            %h4.service-heading Web
+            %p.text-muted We love building with Ruby on Rails, Node, and .Net. Api - check. Desktop and mobile - check.
+            %a.page-scroll{:href => "#contact"} Check with us
+            to find out more.
           .col-md-4
             %span.fa-stack.fa-4x
               %i.fa.fa-circle.fa-stack-2x.text-primary
-              %i.fa.fa-lock.fa-stack-1x.fa-inverse
-            %h4.service-heading Web Security
-            %p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
+              %i.fa.fa-database.fa-stack-1x.fa-inverse
+            %h4.service-heading Data
+            %p.text-muted Sql or NoSql with a dash of big data (Elasticsearch). We know when to use which, and how to make them sing.
     / Portfolio Grid Section
     %section#portfolio.bg-light-gray
       .container
         .row
           .col-lg-12.text-center
             %h2.section-heading Portfolio
-            %h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
+            %h3.section-subheading.text-muted A small sample of projects and clients.
         .row
           .col-md-4.col-sm-6.portfolio-item
             %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal1"}
@@ -146,6 +148,8 @@
             .portfolio-caption
               %h4 Dreams
               %p.text-muted Website Design
+
+
     / About Section
     %section#about
       .container
@@ -164,6 +168,9 @@
                     %h4 2009-2011
                     %h4.subheading Our Humble Beginnings
                   .timeline-body
+
+
+
                     %p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
               %li.timeline-inverted
                 .timeline-image
@@ -199,62 +206,7 @@
                     %br
                       Of Our
                       %br Story!
-    / Team Section
-    %section#team.bg-light-gray
-      .container
-        .row
-          .col-lg-12.text-center
-            %h2.section-heading Our Amazing Team
-            %h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
-        .row
-          .col-sm-4
-            .team-member
-              %img.img-responsive.img-circle{:alt => "", :src => "/assets/team/1.jpg"}
-                %h4 Kay Garland
-                %p.text-muted Lead Designer
-                %ul.list-inline.social-buttons
-                  %li
-                    %a{:href => "#"}
-                      %i.fa.fa-twitter
-                  %li
-                    %a{:href => "#"}
-                      %i.fa.fa-facebook
-                  %li
-                    %a{:href => "#"}
-                      %i.fa.fa-linkedin
-          .col-sm-4
-            .team-member
-              %img.img-responsive.img-circle{:alt => "", :src => "/assets/team/2.jpg"}
-                %h4 Larry Parker
-                %p.text-muted Lead Marketer
-                %ul.list-inline.social-buttons
-                  %li
-                    %a{:href => "#"}
-                      %i.fa.fa-twitter
-                  %li
-                    %a{:href => "#"}
-                      %i.fa.fa-facebook
-                  %li
-                    %a{:href => "#"}
-                      %i.fa.fa-linkedin
-          .col-sm-4
-            .team-member
-              %img.img-responsive.img-circle{:alt => "", :src => "/assets/team/3.jpg"}
-                %h4 Diana Pertersen
-                %p.text-muted Lead Developer
-                %ul.list-inline.social-buttons
-                  %li
-                    %a{:href => "#"}
-                      %i.fa.fa-twitter
-                  %li
-                    %a{:href => "#"}
-                      %i.fa.fa-facebook
-                  %li
-                    %a{:href => "#"}
-                      %i.fa.fa-linkedin
-        .row
-          .col-lg-8.col-lg-offset-2.text-center
-            %p.large.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.
+
     / Clients Aside
     %aside.clients
       .container
@@ -277,7 +229,7 @@
         .row
           .col-lg-12.text-center
             %h2.section-heading Contact Us
-            %h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
+            %h3.section-subheading.text-muted It does not hurt to ask.
         .row
           .col-lg-12
             %form#contactForm{:name => "sentMessage", :novalidate => ""}
@@ -304,24 +256,24 @@
       .container
         .row
           .col-md-4
-            %span.copyright Copyright &copy; Your Website 2014
+            %span.copyright Copyright &copy; Computerist Solutions 2015
           .col-md-4
             %ul.list-inline.social-buttons
               %li
-                %a{:href => "#"}
+                %a{:href => "https://github.com/rebootd"}
+                  %i.fa.fa-github
+              %li
+                %a{:href => "https://twitter.com/computeristco"}
                   %i.fa.fa-twitter
               %li
-                %a{:href => "#"}
-                  %i.fa.fa-facebook
-              %li
-                %a{:href => "#"}
+                %a{:href => "https://linkedin.com/in/computeristco"}
                   %i.fa.fa-linkedin
           .col-md-4
             %ul.list-inline.quicklinks
               %li
-                %a{:href => "#"} Privacy Policy
+                %a{:href => "#", :onclick=>"return false;"} Privacy Policy
               %li
-                %a{:href => "#"} Terms of Use
+                %a{:href => "#", :onclick=>"return false;"} Terms of Use
     / Portfolio Modals
     / Use the modals below to showcase details about your portfolio projects!
     / Portfolio Modal 1
