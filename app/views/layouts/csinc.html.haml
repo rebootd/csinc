@@ -55,8 +55,8 @@
     %header
       .container
         .intro-text
-          .intro-lead-in We Build Practical And Elegant Solutions
-          .intro-heading Welcome To Our Site!
+          / .intro-lead-in We Build Practical And Elegant Solutions
+          .intro-heading  We Build Practical And Elegant Solutions
           %a.page-scroll.btn.btn-xl{:href => "#services"} Tell Me More
     / Services Section
     %section#services
@@ -77,7 +77,7 @@
               %i.fa.fa-circle.fa-stack-2x.text-primary
               %i.fa.fa-laptop.fa-stack-1x.fa-inverse
             %h4.service-heading Web
-            %p.text-muted We love building with Ruby on Rails, Node, and .Net. Api - check. Desktop and mobile - check.
+            %p.text-muted We love building with Ruby on Rails, Node, and .Net. API - check. Desktop and mobile - check.
             %a.page-scroll{:href => "#contact"} Check with us
             to find out more.
           .col-md-4
@@ -85,7 +85,7 @@
               %i.fa.fa-circle.fa-stack-2x.text-primary
               %i.fa.fa-database.fa-stack-1x.fa-inverse
             %h4.service-heading Data
-            %p.text-muted Sql or NoSql with a dash of big data (Elasticsearch). We know when to use which, and how to make them sing.
+            %p.text-muted Sql or NoSql with a dash of big data (ElasticSearch). We know when to use which, and how to make them sing.
     / Portfolio Grid Section
     / %section#portfolio.bg-light-gray
     /   .container
@@ -158,51 +158,47 @@
             %h2.section-heading About
             %h3.section-subheading.text-muted We solve problems with software and sometimes hardware.
         .row
-          .col-lg-12
-            %ul.timeline
+          .col-lg-12.text-center.text-muted
+            %h4.section-subheading.text-muted We Build What Works
+            %p The goal was always to build the best pragmatic solutions for our customers, regardless of technologies. The result has been mixes of .Net, Android, Ruby on Rails, and Node; with databases ranging from SQL Server to PostgresSQL to MongoDB. Even an ElasticSearch appearance. We design and build what you need AND what fits for your needs.
+        .row
+          .col-lg-12.text-center.text-muted
+            %h4.section-subheading.text-muted What We Build With
+            %p We have expertise in: .Net, Ruby on Rails, Node, Javascript, Android, SQL (most variants), MongoDB, and all things web. We love the modern frameworks and tools like jQuery, React, Angular, Less, and Bootstrap.
+
+        .row
+          .col-lg-12.text-center.text-muted
+            %h4.section-subheading.text-muted Clients & Examples
+            %ul.list-inline
               %li
-                .timeline-image
-                  %img.img-circle.img-responsive{:alt => "", :src => "/assets/about/1.jpg"}
-                .timeline-panel
-                  .timeline-heading
-                    %h4 Windows and SQL
-                    %h4.subheading A Client-Server love story
-                  .timeline-body
-                    %p.text-muted Our roots are in the old days of client-server and desktop apps. There was a lot of time invested in learning how to build good backend systems, desktop clients, and database design.
-              %li.timeline-inverted
-                .timeline-image
-                  %img.img-circle.img-responsive{:alt => "", :src => "/assets/about/2.jpg"}
-                .timeline-panel
-                  .timeline-heading
-                    %h4 Web and more Data
-                    %h4.subheading Xmlhttprequest say what?
-                  .timeline-body
-                    %p.text-muted In the early days, javascript was fragile and we used xmlhttprequest to make server calls. Now we have robust tools like jQuery, Node, and React. Data is fetched and displayed elegantly. Good times!
+                %a{:href=>"http://brushfireinteractive.com/index.html"} Brushfire Interactive
               %li
-                .timeline-image
-                  %img.img-circle.img-responsive{:alt => "", :src => "/assets/about/3.jpg"}
-                .timeline-panel
-                  .timeline-heading
-                    %h4 Mobile Advent
-                    %h4.subheading A natural progression
-                  .timeline-body
-                    %p.text-muted Building server platforms got us started in the beginning and into mobile. Your mobile device (or thing ;) is just another client. We build with Android and work with iOS partners.
-              %li.timeline-inverted
-                .timeline-image
-                  %img.img-circle.img-responsive{:alt => "", :src => "/assets/about/4.jpg"}
-                .timeline-panel
-                  .timeline-heading
-                    %h4 Now and Next
-                    %h4.subheading Devices and Things
-                  .timeline-body
-                    %p.text-muted With mobile, web, servers, and data in our toolset, the things we can build are wonderous. But even more than that is what may come in the near future. Wearables? Smart devices? Connected things? Exciting!
-              %li.timeline-inverted
-                .timeline-image
-                  %h4
-                    What Can
-                    %br
-                      We Build
-                      %br For You?
+                %a{:href=>"http://www.chippdinstant.com"} Chipp'd Instant
+              %li
+                %a{:href=>"http://mycounterpane.com"} MyCounterpane
+              %li
+                %a{:href=>"http://srgtech.com"} SRG Tech
+              %li
+                %a{:href=>"http://octoblu.com"} Octoblu
+            %ul.list-inline
+              %li
+                %a{:href => "https://play.google.com/store/apps/details?id=com.showtime.dexter"} Dexter
+              %li
+                %a{:href => "https://play.google.com/store/apps/details?id=weeklysales.adamsfarms.com.adamsfarmsweeklysaleads"} Adams Farms
+              %li
+                %a{:href => "https://play.google.com/store/apps/details?id=cc.updatable.doubleagent"} X3Watch
+              %li
+                %a{:href => "https://play.google.com/store/apps/details?id=com.fantasyalarm.fantasyalarmmlb"          } FantasyAlarm Baseball
+              %li
+                %a{:href => "https://play.google.com/store/apps/details?id=com.fantasyalarm.fantasyalarmnfl"          } FantasyAlarm Football
+              %li
+                %a{:href => "https://play.google.com/store/apps/details?id=com.givr.givrandroid"} Givr
+              %li
+                %a{:href => "https://play.google.com/store/apps/details?id=com.mobileaze.ripil"} Ripil
+              %li
+                %a{:href => "https://play.google.com/store/apps/details?id=com.aclipsa.messenger"} Aclipsa
+
+
 
     / Contact Section
     %section#contact
@@ -210,7 +206,7 @@
         .row
           .col-lg-12.text-center
             %h2.section-heading Contact Us
-            %h3.section-subheading.text-muted It does not hurt to ask.
+            %h3.section-subheading.text-muted Call and ask! We love to talk about ideas!
         .row
           .col-lg-12.text-center
             %p.text-muted
@@ -218,7 +214,7 @@
               %a{:href=>"tel:5551234567"} +1 480-270-4578
             %p.text-muted
               Email:
-              %a{:href=>"mailto:rebootd@computerist.co"} rebootd [at] computerist.co
+              %a{:href=>"mailto:hello@computeristcolutions.com"} hello@computeristsolutions.com
     %footer
       .container
         .row
