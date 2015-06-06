@@ -43,8 +43,8 @@
               %a{:href => "#page-top"}
             %li
               %a.page-scroll{:href => "#services"} Services
-            %li
-              %a.page-scroll{:href => "#portfolio"} Portfolio
+            / %li
+            /   %a.page-scroll{:href => "#portfolio"} Portfolio
             %li
               %a.page-scroll{:href => "#about"} About
             %li
@@ -55,8 +55,8 @@
     %header
       .container
         .intro-text
-          .intro-lead-in Welcome To Our Site!
-          .intro-heading It's Nice To Meet You
+          .intro-lead-in We Build Practical And Elegant Solutions
+          .intro-heading Welcome To Our Site!
           %a.page-scroll.btn.btn-xl{:href => "#services"} Tell Me More
     / Services Section
     %section#services
@@ -87,67 +87,67 @@
             %h4.service-heading Data
             %p.text-muted Sql or NoSql with a dash of big data (Elasticsearch). We know when to use which, and how to make them sing.
     / Portfolio Grid Section
-    %section#portfolio.bg-light-gray
-      .container
-        .row
-          .col-lg-12.text-center
-            %h2.section-heading Portfolio
-            %h3.section-subheading.text-muted A small sample of projects and clients.
-        .row
-          .col-md-4.col-sm-6.portfolio-item
-            %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal1"}
-              .portfolio-hover
-                .portfolio-hover-content
-                  %i.fa.fa-plus.fa-3x
-              %img.img-responsive{:alt => "", :src => "/assets/portfolio/roundicons.png"}
-            .portfolio-caption
-              %h4 Round Icons
-              %p.text-muted Graphic Design
-          .col-md-4.col-sm-6.portfolio-item
-            %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal2"}
-              .portfolio-hover
-                .portfolio-hover-content
-                  %i.fa.fa-plus.fa-3x
-              %img.img-responsive{:alt => "", :src => "/assets/portfolio/startup-framework.png"}
-            .portfolio-caption
-              %h4 Startup Framework
-              %p.text-muted Website Design
-          .col-md-4.col-sm-6.portfolio-item
-            %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal3"}
-              .portfolio-hover
-                .portfolio-hover-content
-                  %i.fa.fa-plus.fa-3x
-              %img.img-responsive{:alt => "", :src => "/assets/portfolio/treehouse.png"}
-            .portfolio-caption
-              %h4 Treehouse
-              %p.text-muted Website Design
-          .col-md-4.col-sm-6.portfolio-item
-            %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal4"}
-              .portfolio-hover
-                .portfolio-hover-content
-                  %i.fa.fa-plus.fa-3x
-              %img.img-responsive{:alt => "", :src => "/assets/portfolio/golden.png"}
-            .portfolio-caption
-              %h4 Golden
-              %p.text-muted Website Design
-          .col-md-4.col-sm-6.portfolio-item
-            %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal5"}
-              .portfolio-hover
-                .portfolio-hover-content
-                  %i.fa.fa-plus.fa-3x
-              %img.img-responsive{:alt => "", :src => "/assets/portfolio/escape.png"}
-            .portfolio-caption
-              %h4 Escape
-              %p.text-muted Website Design
-          .col-md-4.col-sm-6.portfolio-item
-            %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal6"}
-              .portfolio-hover
-                .portfolio-hover-content
-                  %i.fa.fa-plus.fa-3x
-              %img.img-responsive{:alt => "", :src => "/assets/portfolio/dreams.png"}
-            .portfolio-caption
-              %h4 Dreams
-              %p.text-muted Website Design
+    / %section#portfolio.bg-light-gray
+    /   .container
+    /     .row
+    /       .col-lg-12.text-center
+    /         %h2.section-heading Portfolio
+    /         %h3.section-subheading.text-muted A small sample of projects and clients.
+    /     .row
+    /       .col-md-4.col-sm-6.portfolio-item
+    /         %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal1"}
+    /           .portfolio-hover
+    /             .portfolio-hover-content
+    /               %i.fa.fa-plus.fa-3x
+    /           %img.img-responsive{:alt => "", :src => "/assets/portfolio/roundicons.png"}
+    /         .portfolio-caption
+    /           %h4 Round Icons
+    /           %p.text-muted Graphic Design
+    /       .col-md-4.col-sm-6.portfolio-item
+    /         %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal2"}
+    /           .portfolio-hover
+    /             .portfolio-hover-content
+    /               %i.fa.fa-plus.fa-3x
+    /           %img.img-responsive{:alt => "", :src => "/assets/portfolio/startup-framework.png"}
+    /         .portfolio-caption
+    /           %h4 Startup Framework
+    /           %p.text-muted Website Design
+    /       .col-md-4.col-sm-6.portfolio-item
+    /         %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal3"}
+    /           .portfolio-hover
+    /             .portfolio-hover-content
+    /               %i.fa.fa-plus.fa-3x
+    /           %img.img-responsive{:alt => "", :src => "/assets/portfolio/treehouse.png"}
+    /         .portfolio-caption
+    /           %h4 Treehouse
+    /           %p.text-muted Website Design
+    /       .col-md-4.col-sm-6.portfolio-item
+    /         %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal4"}
+    /           .portfolio-hover
+    /             .portfolio-hover-content
+    /               %i.fa.fa-plus.fa-3x
+    /           %img.img-responsive{:alt => "", :src => "/assets/portfolio/golden.png"}
+    /         .portfolio-caption
+    /           %h4 Golden
+    /           %p.text-muted Website Design
+    /       .col-md-4.col-sm-6.portfolio-item
+    /         %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal5"}
+    /           .portfolio-hover
+    /             .portfolio-hover-content
+    /               %i.fa.fa-plus.fa-3x
+    /           %img.img-responsive{:alt => "", :src => "/assets/portfolio/escape.png"}
+    /         .portfolio-caption
+    /           %h4 Escape
+    /           %p.text-muted Website Design
+    /       .col-md-4.col-sm-6.portfolio-item
+    /         %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal6"}
+    /           .portfolio-hover
+    /             .portfolio-hover-content
+    /               %i.fa.fa-plus.fa-3x
+    /           %img.img-responsive{:alt => "", :src => "/assets/portfolio/dreams.png"}
+    /         .portfolio-caption
+    /           %h4 Dreams
+    /           %p.text-muted Website Design
 
 
     / About Section
@@ -156,7 +156,7 @@
         .row
           .col-lg-12.text-center
             %h2.section-heading About
-            %h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
+            %h3.section-subheading.text-muted We solve problems with software and sometimes hardware.
         .row
           .col-lg-12
             %ul.timeline
@@ -165,64 +165,45 @@
                   %img.img-circle.img-responsive{:alt => "", :src => "/assets/about/1.jpg"}
                 .timeline-panel
                   .timeline-heading
-                    %h4 2009-2011
-                    %h4.subheading Our Humble Beginnings
+                    %h4 Windows and SQL
+                    %h4.subheading A Client-Server love story
                   .timeline-body
-
-
-
-                    %p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+                    %p.text-muted Our roots are in the old days of client-server and desktop apps. There was a lot of time invested in learning how to build good backend systems, desktop clients, and database design.
               %li.timeline-inverted
                 .timeline-image
                   %img.img-circle.img-responsive{:alt => "", :src => "/assets/about/2.jpg"}
                 .timeline-panel
                   .timeline-heading
-                    %h4 March 2011
-                    %h4.subheading An Agency is Born
+                    %h4 Web and more Data
+                    %h4.subheading Xmlhttprequest say what?
                   .timeline-body
-                    %p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+                    %p.text-muted In the early days, javascript was fragile and we used xmlhttprequest to make server calls. Now we have robust tools like jQuery, Node, and React. Data is fetched and displayed elegantly. Good times!
               %li
                 .timeline-image
                   %img.img-circle.img-responsive{:alt => "", :src => "/assets/about/3.jpg"}
                 .timeline-panel
                   .timeline-heading
-                    %h4 December 2012
-                    %h4.subheading Transition to Full Service
+                    %h4 Mobile Advent
+                    %h4.subheading A natural progression
                   .timeline-body
-                    %p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+                    %p.text-muted Building server platforms got us started in the beginning and into mobile. Your mobile device (or thing ;) is just another client. We build with Android and work with iOS partners.
               %li.timeline-inverted
                 .timeline-image
                   %img.img-circle.img-responsive{:alt => "", :src => "/assets/about/4.jpg"}
                 .timeline-panel
                   .timeline-heading
-                    %h4 July 2014
+                    %h4 Now and Next
                     %h4.subheading Phase Two Expansion
                   .timeline-body
-                    %p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+                    %p.text-muted With mobile, web, servers, and data in our toolset, the things we can build are wonderous. But even more than that is what may come in the near future. Wearables? Smart devices? Connected things? Exciting!
               %li.timeline-inverted
                 .timeline-image
                   %h4
-                    Be Part
+                    What Can
                     %br
-                      Of Our
-                      %br Story!
+                      We Build
+                      %br For You?
 
-    / Clients Aside
-    %aside.clients
-      .container
-        .row
-          .col-md-3.col-sm-6
-            %a{:href => "#"}
-              %img.img-responsive.img-centered{:alt => "", :src => "/assets/logos/envato.jpg"}
-          .col-md-3.col-sm-6
-            %a{:href => "#"}
-              %img.img-responsive.img-centered{:alt => "", :src => "/assets/logos/designmodo.jpg"}
-          .col-md-3.col-sm-6
-            %a{:href => "#"}
-              %img.img-responsive.img-centered{:alt => "", :src => "/assets/logos/themeforest.jpg"}
-          .col-md-3.col-sm-6
-            %a{:href => "#"}
-              %img.img-responsive.img-centered{:alt => "", :src => "/assets/logos/creative-market.jpg"}
     / Contact Section
     %section#contact
       .container
@@ -231,27 +212,13 @@
             %h2.section-heading Contact Us
             %h3.section-subheading.text-muted It does not hurt to ask.
         .row
-          .col-lg-12
-            %form#contactForm{:name => "sentMessage", :novalidate => ""}
-              .row
-                .col-md-6
-                  .form-group
-                    %input#name.form-control{"data-validation-required-message" => "Please enter your name.", :placeholder => "Your Name *", :required => "", :type => "text"}
-                      %p.help-block.text-danger
-                  .form-group
-                    %input#email.form-control{"data-validation-required-message" => "Please enter your email address.", :placeholder => "Your Email *", :required => "", :type => "email"}
-                      %p.help-block.text-danger
-                  .form-group
-                    %input#phone.form-control{"data-validation-required-message" => "Please enter your phone number.", :placeholder => "Your Phone *", :required => "", :type => "tel"}
-                      %p.help-block.text-danger
-                .col-md-6
-                  .form-group
-                    %textarea#message.form-control{"data-validation-required-message" => "Please enter a message.", :placeholder => "Your Message *", :required => ""}
-                    %p.help-block.text-danger
-                .clearfix
-                .col-lg-12.text-center
-                  #success
-                  %button.btn.btn-xl{:type => "submit"} Send Message
+          .col-lg-12.text-center
+            %p.text-muted
+              Phone:
+              %a{:href=>"tel:5551234567"} +1 480-270-4578
+            %p.text-muted
+              Email:
+              %a{:href=>"mailto:rebootd@computerist.co"} rebootd [at] computerist.co
     %footer
       .container
         .row
