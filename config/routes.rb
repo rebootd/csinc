@@ -5,8 +5,8 @@ Csinc::Application.routes.draw do
   root 'home#index'
 
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-  get 'about' => 'home#about', as: :about
-  get 'contact' => 'home#contact', as: :contact
+  get 'about' => 'home#index', as: :about
+  get 'contact' => 'home#index', as: :contact
 
   get "feed/rss" => 'feed#rss'
   get "feed/all" => 'feed#all'

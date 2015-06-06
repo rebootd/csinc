@@ -1,23 +1,297 @@
-%h2 Hello.
-%p We build software for humans.
-%p
-  Ask
-  %a{:href => "/contact"} us
-  how, why, and anything else.
-%p
-  We will build a new system, rescue an existing app, help you figure out what would work best for your start-up or existing business. We will also tell you if someone else would be more efficient, but are always happy to help.
-%p
-  Here are a few clients:
-  %br/
-%ul
-  %li Fuhu, Inc
-  %li Destination I Do
-  %li Showtime
-  %li TNT
-  %li MyCounterpane
-  %li Chippd
-  %li Octoblu (Now Citrix)
-  %li Givr
-  %li FantasyAlarm
-  %li SRG Tech
-  %li Adams Farms
+/ Header
+%header
+  .container
+    .intro-text
+      / .intro-lead-in We Build Practical And Elegant Solutions
+      .intro-heading  We Build Practical And Elegant Solutions
+      %a.page-scroll.btn.btn-xl{:href => "#services"} Tell Me More
+/ Services Section
+%section#services
+  .container
+    .row
+      .col-lg-12.text-center
+        %h2.section-heading Services
+        %h3.section-subheading.text-muted Reliable, Practical, and Comprehensive
+    .row.text-center
+      .col-md-4
+        %span.fa-stack.fa-4x
+          %i.fa.fa-circle.fa-stack-2x.text-primary
+          %i.fa.fa-tablet.fa-stack-1x.fa-inverse
+        %h4.service-heading Mobile
+        %p.text-muted We focus on Android, whether it's building your cool idea or rescuing an app from failling. We have iOS friends and can connect you.
+      .col-md-4
+        %span.fa-stack.fa-4x
+          %i.fa.fa-circle.fa-stack-2x.text-primary
+          %i.fa.fa-laptop.fa-stack-1x.fa-inverse
+        %h4.service-heading Web
+        %p.text-muted We love building with Ruby on Rails, Node, and .Net. API - check. Desktop and mobile - check.
+        %a.page-scroll{:href => "#contact"} Check with us
+        to find out more.
+      .col-md-4
+        %span.fa-stack.fa-4x
+          %i.fa.fa-circle.fa-stack-2x.text-primary
+          %i.fa.fa-database.fa-stack-1x.fa-inverse
+        %h4.service-heading Data
+        %p.text-muted Sql or NoSql with a dash of big data (ElasticSearch). We know when to use which, and how to make them sing.
+/ Portfolio Grid Section
+%section#portfolio.bg-light-gray
+  .container
+    .row
+      .col-lg-12.text-center
+        %h2.section-heading Portfolio
+        %h3.section-subheading.text-muted A small sample of projects and clients.
+    .row
+      .col-md-4.col-sm-6.portfolio-item
+        %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal1"}
+          .portfolio-hover
+            .portfolio-hover-content
+              %i.fa.fa-plus.fa-3x
+          %img.img-responsive{:alt => "", :src => "/assets/portfolio/octoblu.png"}
+        .portfolio-caption
+          %h4 Octoblu
+          %p.text-muted Internet of Things
+      .col-md-4.col-sm-6.portfolio-item
+        %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal2"}
+          .portfolio-hover
+            .portfolio-hover-content
+              %i.fa.fa-plus.fa-3x
+          %img.img-responsive{:alt => "", :src => "/assets/portfolio/mycounterpane.png"}
+        .portfolio-caption
+          %h4 MyCounterpane
+          %p.text-muted A Community for Healing
+      .col-md-4.col-sm-6.portfolio-item
+        %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal3"}
+          .portfolio-hover
+            .portfolio-hover-content
+              %i.fa.fa-plus.fa-3x
+          %img.img-responsive{:alt => "", :src => "/assets/portfolio/fuhu.png"}
+        .portfolio-caption
+          %h4 Fuhu Inc
+          %p.text-muted Developing for Children
+      .col-md-4.col-sm-6.portfolio-item
+        %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal4"}
+          .portfolio-hover
+            .portfolio-hover-content
+              %i.fa.fa-plus.fa-3x
+          %img.img-responsive{:alt => "", :src => "/assets/portfolio/chippdinstant.png"}
+        .portfolio-caption
+          %h4 Chipp'd Instant
+          %p.text-muted Android
+      .col-md-4.col-sm-6.portfolio-item
+        %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal5"}
+          .portfolio-hover
+            .portfolio-hover-content
+              %i.fa.fa-plus.fa-3x
+          %img.img-responsive{:alt => "", :src => "/assets/portfolio/pledger.png"}
+        .portfolio-caption
+          %h4 Pledger
+          %p.text-muted Android and Ruby on Rails
+      .col-md-4.col-sm-6.portfolio-item
+        %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal6"}
+          .portfolio-hover
+            .portfolio-hover-content
+              %i.fa.fa-plus.fa-3x
+          %img.img-responsive{:alt => "", :src => "/assets/portfolio/ripil.png"}
+        .portfolio-caption
+          %h4 Ripil
+          %p.text-muted Android
+
+
+/ About Section
+%section#about
+  .container
+    .row
+      .col-lg-12.text-center
+        %h2.section-heading About
+        %h3.section-subheading.text-muted We solve problems with software and sometimes hardware.
+    .row
+      .col-lg-12.text-center.text-muted
+        %h4.section-subheading.text-muted We Build What Works
+        %p The goal was always to build the best pragmatic solutions for our customers, regardless of technologies. The result has been mixes of .Net, Android, Ruby on Rails, and Node; with databases ranging from SQL Server to PostgresSQL to MongoDB. Even an ElasticSearch appearance. We design and build what you need AND what fits for your needs.
+    .row
+      .col-lg-12.text-center.text-muted
+        %h4.section-subheading.text-muted What We Build With
+        %p We have expertise in: .Net, Ruby on Rails, Node, Javascript, Android, SQL (most variants), MongoDB, and all things web. We love the modern frameworks and tools like jQuery, React, Angular, Less, and Bootstrap.
+
+/ Contact Section
+%section#contact
+  .container
+    .row
+      .col-lg-12.text-center
+        %h2.section-heading Contact Us
+        %h3.section-subheading.text-muted Call and ask! We love to talk about ideas!
+    .row
+      .col-lg-12.text-center
+        %p.text-muted
+          Phone:
+          %a{:href=>"tel:5551234567"} +1 480-270-4578
+        %p.text-muted
+          Email:
+          %a{:href=>"mailto:hello@computeristcolutions.com"} hello@computeristsolutions.com
+%footer
+  .container
+    .row
+      .col-md-4
+        %span.copyright Copyright &copy; Computerist Solutions 2015
+      .col-md-4
+        %ul.list-inline.social-buttons
+          %li
+            %a{:href => "https://github.com/rebootd"}
+              %i.fa.fa-github
+          %li
+            %a{:href => "https://twitter.com/computeristco"}
+              %i.fa.fa-twitter
+          %li
+            %a{:href => "https://linkedin.com/in/computeristco"}
+              %i.fa.fa-linkedin
+      .col-md-4
+        %ul.list-inline.quicklinks
+          %li
+            %a{:href => "#", :onclick=>"return false;"} Privacy Policy
+          %li
+            %a{:href => "#", :onclick=>"return false;"} Terms of Use
+/ Portfolio Modals
+/ Use the modals below to showcase details about your portfolio projects!
+/ Portfolio Modal 1
+#portfolioModal1.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+  .modal-content
+    .close-modal{"data-dismiss" => "modal"}
+      .lr
+        .rl
+    .container
+      .row
+        .col-lg-8.col-lg-offset-2
+          .modal-body
+            / Project Details Go Here
+            %h2 Octoblu
+            %p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
+            %p
+              %strong> Bolder text
+              &nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            %ul.list-inline
+              %li Date: July 2014
+              %li Client: Round Icons
+              %li Category: Graphic Design
+            %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
+              %i.fa.fa-times
+              Close Project
+/ Portfolio Modal 2
+#portfolioModal2.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+  .modal-content
+    .close-modal{"data-dismiss" => "modal"}
+      .lr
+        .rl
+    .container
+      .row
+        .col-lg-8.col-lg-offset-2
+          .modal-body
+            %h2 MyCounterpane
+            %p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
+            %p
+              %strong> Bolder text
+              &nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            %ul.list-inline
+              %li Date: July 2014
+              %li Client: Round Icons
+              %li Category: Graphic Design
+            %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
+              %i.fa.fa-times
+              Close Project
+/ Portfolio Modal 3
+#portfolioModal3.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+  .modal-content
+    .close-modal{"data-dismiss" => "modal"}
+      .lr
+        .rl
+    .container
+      .row
+        .col-lg-8.col-lg-offset-2
+          .modal-body
+            / Project Details Go Here
+            %h2 Fuhu
+            %p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
+            %p
+              %strong> Bolder text
+              &nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            %ul.list-inline
+              %li Date: July 2014
+              %li Client: Round Icons
+              %li Category: Graphic Design
+            %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
+              %i.fa.fa-times
+              Close Project
+/ Portfolio Modal 4
+#portfolioModal4.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+  .modal-content
+    .close-modal{"data-dismiss" => "modal"}
+      .lr
+        .rl
+    .container
+      .row
+        .col-lg-8.col-lg-offset-2
+          .modal-body
+            / Project Details Go Here
+            %h2 Chipp'd Instant
+            %p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
+            %p
+              %strong> Bolder text
+              &nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            %ul.list-inline
+              %li Date: July 2014
+              %li Client: Round Icons
+              %li Category: Graphic Design
+            %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
+              %i.fa.fa-times
+              Close Project
+/ Portfolio Modal 5
+#portfolioModal5.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+  .modal-content
+    .close-modal{"data-dismiss" => "modal"}
+      .lr
+        .rl
+    .container
+      .row
+        .col-lg-8.col-lg-offset-2
+          .modal-body
+            / Project Details Go Here
+            %h2 Pledger
+            %p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
+            %p
+              %strong> Bolder text
+              &nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            %ul.list-inline
+              %li Date: July 2014
+              %li Client: Round Icons
+              %li Category: Graphic Design
+            %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
+              %i.fa.fa-times
+              Close Project
+/ Portfolio Modal 6
+#portfolioModal6.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+  .modal-content
+    .close-modal{"data-dismiss" => "modal"}
+      .lr
+        .rl
+    .container
+      .row
+        .col-lg-8.col-lg-offset-2
+          .modal-body
+            / Project Details Go Here
+            %h2 Ripil
+            %p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
+            %p
+              %strong> Bolder text
+              &nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            %ul.list-inline
+              %li Date: July 2014
+              %li Client: Round Icons
+              %li Category: Graphic Design
+            %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
+              %i.fa.fa-times
+              Close Project
