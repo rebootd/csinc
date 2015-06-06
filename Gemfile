@@ -3,7 +3,7 @@ ruby "2.2.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
-gem 'rails_12factor', group: :production
+# gem 'rails_12factor', group: :production
 
 #gem 'sqlite3'
 gem 'sass-rails' #, '~> 4.0.0'
@@ -30,8 +30,7 @@ group :doc do
 end
 
 group :production do
-  #gem 'pg'
-  #new relic app monitoring info
+  gem 'rails_12factor'
   gem 'newrelic_rpm'
 end
 
