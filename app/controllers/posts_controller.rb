@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
   helper :all
-  protect_from_forgery :except => :import  
+  protect_from_forgery :except => :import
   respond_to :html, :json
-  
+
 
   PAGE_SIZE = 30
 
@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     @page = 1 if @page == 0
     @category = params[:category] || 'all'
     # category_id = Category.find_id(@category);
-    
+
     #@posts = Post.where(:published_on.lte => Time.now).limit(10).order_by([[:published_on, :desc]]) #find_summary(@page, 10, @category, !logged_in?)
     if @category == 'all'
       @posts = Post.get_page(@page, PAGE_SIZE, true)
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
     end
 
     @hasolder = (@page * PAGE_SIZE) < Post.count
-    
+
     respond_with @posts
   end
 
@@ -49,5 +49,5 @@ class PostsController < ApplicationController
 
     respond_with @post
   end
-  
+
 end

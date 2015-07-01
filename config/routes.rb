@@ -20,5 +20,6 @@ Csinc::Application.routes.draw do
   get 'blog/syndication.axd' => 'feed#rss', :as => :rss_posts
   get 'blog/author/*other' => 'home#about'
   get 'blog/posts/:year/:month/:day/:slug' => 'posts#show'
+  get 'blog/post/:slug' => 'posts#show'
   get 'blog/posts/:year/:month/:slug' => 'posts#show', :as => :full_post
 end

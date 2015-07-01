@@ -3,7 +3,7 @@ require 'mongoid'
 
 class Post
 	include Mongoid::Document
-	
+
   field :title, :type => String
 	field :body, :type => String
 	field :published_on, :type => DateTime
@@ -17,8 +17,12 @@ class Post
   end
 
   def self.find_by_slug(val, pub_only)
-    return Post.where(:slug => val, :published_on.lte => Time.now).first if pub_only
-		Post.where(:slug => val).first
+    post = Post.where(:slug => val)
+    post = post.first if post
+    return post if pub_only && post != nil && post.published_on.lte >= Time.now
+    return nil if pub_only
+
+		post
   end
 
   def self.slug_exists?(val, pub_only)
@@ -27,7 +31,7 @@ class Post
   end
 
   def self.find_next_post(post, pub_only)
-    return Post.where(:published_on.lte => Time.now, 
+    return Post.where(:published_on.lte => Time.now,
 											:published_on.gt => post.published_on)
 		                  .asc(:published_on).first if pub_only
     Post.where(:published_on.gt => post.published_on).desc(:published_on).first
@@ -51,7 +55,7 @@ class Post
   def self.get_category(page, limit, cat_name, pub_only)
 		skip_count = (page-1)*limit
 		skip_count = 0 if page < 1
-    return Post.where(:category => cat_name, 
+    return Post.where(:category => cat_name,
 							 :published_on.lte => Time.now).desc(:published_on)
                .skip(skip_count).take(limit) if pub_only
 
@@ -63,9 +67,9 @@ class Post
 		skip_count = (page-1)*limit
 		skip_count = 0 if page < 1
     cat_name ||= ''
-    return Post.where(:category => cat_name, 
+    return Post.where(:category => cat_name,
 							 :published_on.lte => Time.now).desc(:published_on)
-               .skip(skip_count).take(limit) if cat_name != nil && cat_name != '' 
+               .skip(skip_count).take(limit) if cat_name != nil && cat_name != ''
     Post.where(:published_on.lte => Time.now).desc(:published_on)
                .skip(skip_count).take(limit)
   end
