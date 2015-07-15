@@ -17,9 +17,10 @@ class Post
   end
 
   def self.find_by_slug(val, pub_only)
-    post = Post.where(:slug => val)
+    puts "==== \t finding slug: #{val}"
+    post = Post.where(slug: val)
     post = post.first if post
-    return post if pub_only && post != nil && post.published_on.lte >= Time.now
+    return post if pub_only && post != nil && post.published_on <= Time.now
     return nil if pub_only
 
 		post

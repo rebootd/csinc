@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  layout 'application'
   helper :all
   protect_from_forgery :except => :import
   respond_to :html, :json
@@ -32,7 +33,7 @@ class PostsController < ApplicationController
 
     #render missing_post_path and return if @post == nil
     redirect_to(posts_path) if @post == nil
-    redirect_to '/#' + "/blog/posts/#{@post.published_on.year}/#{@post.published_on.month}/#{@post.slug}", :status => 301
+    # redirect_to "/blog/posts/#{@post.published_on.year}/#{@post.published_on.month}/#{@post.slug}", :status => 301
     # if @post.published_on.year.to_s != params[:year] || @post.published_on.month.to_s != params[:month]
     #   # redirect_to full_post_path(:year=>@post.published_on.year, :month=>@post.published_on.month,
     #   #                         :slug=>@post.slug), :status => 301
