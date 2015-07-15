@@ -172,10 +172,13 @@ DEPENDENCIES
   mongoid!
   newrelic_rpm
   puma
-  rails (= 4.2.1)
+  rails (~> 4.2.1)
   rails_12factor
   responders (~> 2.0)
   sass-rails
   sdoc
   turbolinks
   uglifier
+
+BUNDLED WITH
+   1.10.5
