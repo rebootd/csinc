@@ -20,12 +20,11 @@ class ApplicationController < ActionController::Base
     ur
   end
 
-  def url_to_post(post)
-    return '' if post == nil
-    # url_for :controller => 'post', :action => 'show', :year => post.created_at.year,
-    #  :month => post.created_at.month, :day => post.created_at.day, :slug => post.slug
-    full_post_path(:year => post.published_on.year, :month => post.published_on.month,
-                 :slug => post.slug)
+  def url_to_post(article)
+    return '' if article == nil
+    dt = Date.parse(article["date"])
+    slug = article["slug"]
+    "/blog/posts/#{dt.year}/#{dt.month}/#{slug}"
   end
 
 end

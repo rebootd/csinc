@@ -2,19 +2,12 @@
 %h2
   Recent Articles
 
-- if @page > 1
-  %a{:href=>"/blog?page=#{@page-1}"}
-    << newer
-
-- @posts.each do |post|
+- @keys.each do |key|
+  - key = JSON.parse key
   %p
     %div
       %b
-        %a{:href=>url_to_post(post)}=post.title
+        %a{:href=>url_to_post(key)}=key["title"]
       %br
-      %i=post.published_on.strftime('Published on %B %d, %Y')
-    %div=post.get_summary.html_safe
+      %i="Published on " + key["date"]
 
-- if @hasolder
-  %a{:href=>"/blog?page=#{@page+1}"}
-    older >>

@@ -34,8 +34,4 @@ group :production do
   gem 'newrelic_rpm'
 end
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'redcarpet', '~>3.3.2'
