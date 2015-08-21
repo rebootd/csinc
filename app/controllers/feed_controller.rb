@@ -4,11 +4,13 @@ class FeedController < ApplicationController
   def rss
   	response.headers["Expires"] = "#{10.minutes.from_now}"
     @homeurl = home_url
-    cat = params[:category]
-    @posts = Post.find_rss(1, 10, cat)
 
     response.headers["Content-Type"] = "application/xml; charset=utf-8"
-    #render :layout => false
+    
+    file = File.join(Rails.root, 'public', "posts/map.js")
+    file_contents = read_file(file)
+    @keys = JSON.parse(file_contents)
+
     render(:template => 'feed/rss', :formats => [:xml], :handlers => :builder, :layout => false)
 
   end
@@ -20,12 +22,28 @@ class FeedController < ApplicationController
     @posts = Post.all
 
     response.headers["Content-Type"] = "application/json; charset=utf-8"
-    #render :layout => false
-    render(:json => @posts, :layout => false)
+
+    file = File.join(Rails.root, 'public', "posts/map.js")
+    file_contents = read_file(file)
+    keys = JSON.parse(file_contents)
+    articles = []
+    keys.each do |article|
+      articles << JSON.parse(article)
+    end
+
+    render(:json => articles, :layout => false)
   end
 
   private
   def home_url
     base_url
   end
+
+  def read_file(file_name)
+    file = File.open(file_name, "r")
+    data = file.read
+    file.close
+    return data
+  end
+
 end
