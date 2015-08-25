@@ -1,5 +1,5 @@
 [
-"{\"date\":\"2015-08-25\",\"slug\":\"brew-cask-outdated-and-upgrade\",\"title\":\"brew cask outdated and upgrade\"}", 
+"{\"date\":\"2015-08-25\",\"slug\":\"mac-setup-brew-cask-outdated-and-upgrade\",\"title\":\"mac setup, brew cask outdated and upgrade\"}", 
 "{\"date\":\"2015-08-19\",\"slug\":\"notice_new_blog_storage\",\"title\":\"notice: new blog storage\"}", 
 "{\"date\":\"2013-05-03\",\"slug\":\"notice_dropping_feedburner\",\"title\":\"notice: dropping feedburner\"}", 
 "{\"date\":\"2012-06-08\",\"slug\":\"scott-guthrie-azgroups-2012\",\"title\":\"scott guthrie azgroups 2012\"}", 
