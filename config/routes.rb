@@ -9,6 +9,7 @@ Csinc::Application.routes.draw do
   get 'contact' => 'home#index', as: :contact
 
   get "feed/rss" => 'feed#rss'
+  get "feed/json" => 'feed#json'
   get "feed/all" => 'feed#all'
   scope "/blog" do
     resources :posts

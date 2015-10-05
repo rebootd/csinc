@@ -16,6 +16,21 @@ class FeedController < ApplicationController
 
   end
 
+  def json
+    response.headers["Expires"] = "#{10.minutes.from_now}"
+    @homeurl = home_url
+
+    response.headers["Content-Type"] = "application/json; charset=utf-8"
+    
+    file = File.join(Rails.root, 'public', "posts/map.js")
+    file_contents = read_file(file)
+    @keys = JSON.parse(file_contents)
+    @keys = @keys.take(10) unless params[:all] == 'true'
+
+    render(:json => @keys, :layout => false)
+
+  end
+
   def all
     response.headers["Expires"] = "#{10.minutes.from_now}"
     @homeurl = home_url
