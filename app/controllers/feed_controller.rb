@@ -10,6 +10,7 @@ class FeedController < ApplicationController
     file = File.join(Rails.root, 'public', "posts/map.js")
     file_contents = read_file(file)
     @keys = JSON.parse(file_contents)
+    @keys = @keys.take(10) unless params[:all] == 'true'
 
     render(:template => 'feed/rss', :formats => [:xml], :handlers => :builder, :layout => false)
 
