@@ -31,6 +31,13 @@ class FeedController < ApplicationController
 
   end
 
+  def show
+    response.headers["Expires"] = "#{10.minutes.from_now}"
+    file = File.join(Rails.root, 'public', "posts/#{params[:slug].downcase}.md")
+    file_contents = File.read(file)
+    render(:text => file_contents, :layout => false)
+  end
+
   def all
     response.headers["Expires"] = "#{10.minutes.from_now}"
     @homeurl = home_url

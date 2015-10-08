@@ -10,6 +10,7 @@ Csinc::Application.routes.draw do
 
   get "feed/rss" => 'feed#rss'
   get "feed/json" => 'feed#json'
+  get "feed/:slug" => 'feed#show'
   get "feed/all" => 'feed#all'
   scope "/blog" do
     resources :posts
