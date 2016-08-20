@@ -119,15 +119,12 @@
     .row
       .col-lg-12.text-center
         %h2.section-heading Contact Us
-        %h3.section-subheading.text-muted Call and ask! We love to talk about ideas!
+        %h3.section-subheading.text-muted Just ask! We love to talk about ideas!
     .row
       .col-lg-12.text-center
         %p.text-muted
-          Phone:
-          %a{:href=>"tel:5551234567"} +1 480-270-4578
-        %p.text-muted
           Email:
-          %a{:href=>"mailto:hello@computeristcolutions.com"} hello@computeristsolutions.com
+          %a.emailto{:href => "mailto:hello@computeristsolutions.com"} hello [at] computeristsolutions.com
 %footer
   .container
     .row
@@ -138,12 +135,7 @@
           %li
             %a{:href => "https://github.com/rebootd"}
               %i.fa.fa-github
-          %li
-            %a{:href => "https://twitter.com/computeristco"}
-              %i.fa.fa-twitter
-          %li
-            %a{:href => "https://linkedin.com/in/computeristco"}
-              %i.fa.fa-linkedin
+          
       .col-md-4
         %ul.list-inline.quicklinks
           %li
@@ -292,3 +284,4 @@
             %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
               %i.fa.fa-times
               Close Project
+
