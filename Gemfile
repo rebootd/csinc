@@ -2,10 +2,8 @@ source 'https://rubygems.org'
 ruby "2.3.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~>4.2.1'
-# gem 'rails_12factor', group: :production
+gem 'rails', '~>5.0'
 
-#gem 'sqlite3'
 gem 'sass-rails' #, '~> 4.0.0'
 gem 'uglifier' #, '>= 1.3.0'
 gem 'coffee-rails' #, '~> 4.0.0'
@@ -17,7 +15,7 @@ gem 'haml'
 # gem 'unicorn'
 gem 'puma'
 
-gem 'responders', '~> 2.0'
+gem 'responders' #, '~> 2.0'
 gem "font-awesome-rails"
 
 group :doc do
@@ -30,4 +28,4 @@ group :production do
   gem 'newrelic_rpm'
 end
 
-gem 'redcarpet', '~>3.3.2'
+gem 'redcarpet' #, '~>3.3.2'
