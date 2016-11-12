@@ -1,7 +1,10 @@
 class HomeController < ApplicationController
-  layout "csinc"
+  layout "material"
 
   def index
+  end
+
+  def home
   end
 
   def about
