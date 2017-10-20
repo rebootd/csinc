@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://www.computeristsolutions.com/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="custom software,custom programming,HTML,CSS,XML,.net,Ruby,Rails,JavaScript" name="keywords">
+<meta content="Computerist Solutions is a customer software development company specializing in business needs of small to medium sized business" name="description">
+
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<script src="https://js-agent.newrelic.com/nr-1059.min.js"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"2110d23e76","applicationID":"2865477","transactionName":"d1xXTUEJVVhSQBtZVllWFlBdAlxM","queueTime":0,"applicationTime":7,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1059.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="" name="description">
+<meta content="" name="author">
+<title>Computerist Solutions</title>
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+<link href="./css/agency.css" rel="stylesheet">
+<!-- %link{:href => "/css/font-awesome.min.css", :rel => "stylesheet", :type => "text/css"} -->
+<link href="./css/font-awesome.min.css" rel="stylesheet">
+<link href="./css/0.css" rel="stylesheet" type="text/css">
+<link href="./css/1.css" rel="stylesheet" type="text/css">
+<link href="./css/2.css" rel="stylesheet" type="text/css">
+<link href="./css/3.css" rel="stylesheet" type="text/css">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body class="index" id="page-top">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class="container">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header page-scroll">
+<button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand page-scroll" href="http://www.computeristsolutions.com/#page-top">Computerist Solutions</a>
+</div>
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav navbar-right">
+<li class="hidden">
+<a href="http://www.computeristsolutions.com/#page-top"></a>
+</li>
+<li class="">
+<a class="page-scroll" href="http://www.computeristsolutions.com/#services">Services</a>
+</li>
+<li class="">
+<a class="page-scroll" href="http://www.computeristsolutions.com/#portfolio">Portfolio</a>
+</li>
+<li class="">
+<a class="page-scroll" href="http://www.computeristsolutions.com/#about">About</a>
+</li>
+<li class="">
+<a class="page-scroll" href="http://www.computeristsolutions.com/#contact">Contact</a>
+</li>
+<li>
+<a class="page-scroll" href="http://blog.computerist.co/">Blog</a>
+</li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</div>
+<!-- /.container-fluid -->
+</nav>
+<!-- Header -->
+<header>
+<div class="container">
+<div class="intro-text">
+<!-- .intro-lead-in We Build Practical And Elegant Solutions -->
+<div class="intro-heading">We Build Practical And Elegant Solutions</div>
+<a class="page-scroll btn btn-xl" href="http://www.computeristsolutions.com/#services">Tell Me More</a>
+</div>
+</div>
+</header>
+<!-- Services Section -->
+<section id="services">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 text-center">
+<h2 class="section-heading">Services</h2>
+<h3 class="section-subheading text-muted">Reliable, Practical, and Comprehensive</h3>
+</div>
+</div>
+<div class="row text-center">
+<div class="col-md-4">
+<span class="fa-stack fa-4x">
+<i class="fa fa-circle fa-stack-2x text-primary"></i>
+<i class="fa fa-tablet fa-stack-1x fa-inverse"></i>
+</span>
+<h4 class="service-heading">Mobile</h4>
+<p class="text-muted">We focus on Android, whether it's building your cool idea or rescuing an app from failing. We have iOS friends and can connect you.</p>
+</div>
+<div class="col-md-4">
+<span class="fa-stack fa-4x">
+<i class="fa fa-circle fa-stack-2x text-primary"></i>
+<i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+</span>
+<h4 class="service-heading">Web</h4>
+<p class="text-muted">We love building with Ruby on Rails, Node, and .NET. API - check. Desktop and mobile - check.</p>
+<a class="page-scroll" href="http://www.computeristsolutions.com/#contact">Check with us</a>
+to find out more.
+</div>
+<div class="col-md-4">
+<span class="fa-stack fa-4x">
+<i class="fa fa-circle fa-stack-2x text-primary"></i>
+<i class="fa fa-database fa-stack-1x fa-inverse"></i>
+</span>
+<h4 class="service-heading">Data</h4>
+<p class="text-muted">Sql or NoSql with a dash of big data (ElasticSearch). We know when to use which, and how to make them sing.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Grid Section -->
+<section class="bg-light-gray" id="portfolio">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 text-center">
+<h2 class="section-heading">Portfolio</h2>
+<h3 class="section-subheading text-muted">A small sample of projects and clients.</h3>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4 col-sm-6 portfolio-item">
+<a class="portfolio-link" data-toggle="modal" href="http://www.computeristsolutions.com/#portfolioModal1">
+<div class="portfolio-hover">
+<div class="portfolio-hover-content">
+<i class="fa fa-plus fa-3x"></i>
+</div>
+</div>
+<img alt="" class="img-responsive" src="./img/octoblu.png">
+</a>
+<div class="portfolio-caption">
+<h4>Octoblu</h4>
+<p class="text-muted">Internet of Things</p>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 portfolio-item">
+<a class="portfolio-link" data-toggle="modal" href="http://www.computeristsolutions.com/#portfolioModal2">
+<div class="portfolio-hover">
+<div class="portfolio-hover-content">
+<i class="fa fa-plus fa-3x"></i>
+</div>
+</div>
+<img alt="" class="img-responsive" src="./img/mycounterpane.png">
+</a>
+<div class="portfolio-caption">
+<h4>MyCounterpane</h4>
+<p class="text-muted">A Community for Healing</p>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 portfolio-item">
+<a class="portfolio-link" data-toggle="modal" href="http://www.computeristsolutions.com/#portfolioModal3">
+<div class="portfolio-hover">
+<div class="portfolio-hover-content">
+<i class="fa fa-plus fa-3x"></i>
+</div>
+</div>
+<img alt="" class="img-responsive" src="./img/fuhu.png">
+</a>
+<div class="portfolio-caption">
+<h4>Fuhu Inc</h4>
+<p class="text-muted">Developing for Children</p>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 portfolio-item">
+<a class="portfolio-link" data-toggle="modal" href="http://www.computeristsolutions.com/#portfolioModal4">
+<div class="portfolio-hover">
+<div class="portfolio-hover-content">
+<i class="fa fa-plus fa-3x"></i>
+</div>
+</div>
+<img alt="" class="img-responsive" src="./img/chippdinstant.png">
+</a>
+<div class="portfolio-caption">
+<h4>Chipp'd Instant</h4>
+<p class="text-muted">Android</p>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 portfolio-item">
+<a class="portfolio-link" data-toggle="modal" href="http://www.computeristsolutions.com/#portfolioModal5">
+<div class="portfolio-hover">
+<div class="portfolio-hover-content">
+<i class="fa fa-plus fa-3x"></i>
+</div>
+</div>
+<img alt="" class="img-responsive" src="./img/pledger.png">
+</a>
+<div class="portfolio-caption">
+<h4>Pledger</h4>
+<p class="text-muted">Android and Ruby on Rails</p>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 portfolio-item">
+<a class="portfolio-link" data-toggle="modal" href="http://www.computeristsolutions.com/#portfolioModal6">
+<div class="portfolio-hover">
+<div class="portfolio-hover-content">
+<i class="fa fa-plus fa-3x"></i>
+</div>
+</div>
+<img alt="" class="img-responsive" src="./img/ripil.png">
+</a>
+<div class="portfolio-caption">
+<h4>Ripil</h4>
+<p class="text-muted">Android</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section id="about">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 text-center">
+<h2 class="section-heading">About</h2>
+<h3 class="section-subheading text-muted">We solve problems with software and sometimes hardware.</h3>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-12 text-center text-muted">
+<h4 class="section-subheading text-muted">We Build What Works</h4>
+<p>The goal was always to build the best, pragmatic solutions for our customers, regardless of technologies. The result has been mixes of .NET, Android, Ruby on Rails, and Node; with databases ranging from SQL Server to PostgresSQL to MongoDB. Even an ElasticSearch appearance. We design and build what you need AND what fits for your needs.</p>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-12 text-center text-muted">
+<h4 class="section-subheading text-muted">What We Build With</h4>
+<p>We have expertise in: .NET, Ruby on Rails, Node, Javascript, Android, SQL (most variants), MongoDB, and all things web. We love the modern frameworks and tools like jQuery, React, Angular, Less, and Bootstrap.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 text-center">
+<h2 class="section-heading">Contact Us</h2>
+<h3 class="section-subheading text-muted">Just ask! We love to talk about ideas!</h3>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-12 text-center">
+<p class="text-muted">
+Email:
+<a class="emailto" href="mailto:hello@computeristsolutions.com">hello [at] computeristsolutions.com</a>
+</p>
+</div>
+</div>
+</div>
+</section>
+<footer>
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<span class="copyright">Copyright © Computerist Solutions 2015</span>
+</div>
+<div class="col-md-4">
+<ul class="list-inline social-buttons">
+<li>
+<a href="https://github.com/rebootd">
+<i class="fa fa-github"></i>
+</a>
+</li>
+<li>
+<a href="https://twitter.com/4spacetabs">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="col-md-4">
+<ul class="list-inline quicklinks">
+<li>
+<a href="http://www.computeristsolutions.com/#" onclick="return false;">Privacy Policy</a>
+</li>
+<li>
+<a href="http://www.computeristsolutions.com/#" onclick="return false;">Terms of Use</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+<!-- Portfolio Modals -->
+<!-- Use the modals below to showcase details about your portfolio projects! -->
+<!-- Portfolio Modal 1 -->
+<div aria-hidden="true" class="portfolio-modal modal fade" id="portfolioModal1" role="dialog" tabindex="-1">
+<div class="modal-content">
+<div class="close-modal" data-dismiss="modal">
+<div class="lr">
+<div class="rl"></div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2">
+<div class="modal-body">
+<!-- Project Details Go Here -->
+<h2>Octoblu</h2>
+<p class="item-intro text-muted">Internet of Things with Javascript!</p>
+<p>We were brought in to help with AngularJS, and also helped building the management site and API integrations. It was a very fun project to be involved with, and continues to be an exciting product now owned by Citrix.</p>
+<p><strong>Technologies used:</strong>&nbsp;Javascript, Node, Express, Angular, MongoDB, oAuth, git, Github, and Sublime Text. Also: Arduino, Spark, NEST, and more things were used.
+</p>
+<ul class="list-inline">
+<li>Client: Octoblu</li>
+<li>Category: Web Development, IoT</li>
+</ul>
+<button class="btn btn-primary" data-dismiss="modal" type="button">
+<i class="fa fa-times"></i>
+Close Project
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Portfolio Modal 2 -->
+<div aria-hidden="true" class="portfolio-modal modal fade" id="portfolioModal2" role="dialog" tabindex="-1">
+<div class="modal-content">
+<div class="close-modal" data-dismiss="modal">
+<div class="lr">
+<div class="rl"></div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2">
+<div class="modal-body">
+<h2>My Counterpane</h2>
+<p class="item-intro text-muted">Web development with heart!</p>
+<p>
+We got to help Kate build her online community for people dealing with tough issues. You need to see
+<a href="http://www.mycounterpane.com/" target="_blank">Kate's story</a>
+if you want to really get it.
+</p>
+<p><strong>Technologies used:</strong>&nbsp;Ruby on Rails, Javascript, git, Github, and Sublime Text.
+</p>
+<ul class="list-inline">
+<li>Client: MyCounterpane</li>
+<li>Category: Web Development</li>
+</ul>
+<button class="btn btn-primary" data-dismiss="modal" type="button">
+<i class="fa fa-times"></i>
+Close Project
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Portfolio Modal 3 -->
+<div aria-hidden="true" class="portfolio-modal modal fade" id="portfolioModal3" role="dialog" tabindex="-1">
+<div class="modal-content">
+<div class="close-modal" data-dismiss="modal">
+<div class="lr">
+<div class="rl"></div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2">
+<div class="modal-body">
+<!-- Project Details Go Here -->
+<h2>Fuhu</h2>
+<p class="item-intro text-muted">Mobile Development for Kids!</p>
+<p>Fuhu continues to develop their Nabi platform with games and apps aimed at children and families, with a respect to privacy and parent preferences. This was another fun project for their growing platform.</p>
+<p><strong>Technologies used:</strong>&nbsp;Android, Android Studio, okhttp, git
+</p>
+<ul class="list-inline">
+<li>Client: Fuhu</li>
+<li>Category: Mobile Development</li>
+</ul>
+<button class="btn btn-primary" data-dismiss="modal" type="button">
+<i class="fa fa-times"></i>
+Close Project
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Portfolio Modal 4 -->
+<div aria-hidden="true" class="portfolio-modal modal fade" id="portfolioModal4" role="dialog" tabindex="-1">
+<div class="modal-content">
+<div class="close-modal" data-dismiss="modal">
+<div class="lr">
+<div class="rl"></div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2">
+<div class="modal-body">
+<!-- Project Details Go Here -->
+<h2>Chipp'd Instant</h2>
+<p class="item-intro text-muted">Digital tagging for personally connecting!</p>
+<p>We started with Chipp'd by rescuing the Chipp'd Instant android app, and are moving into the rest of their product. Their plans include updates to their platform and the addition of devices. Lots of fun to work with this team!</p>
+<p><strong>Technologies used:</strong>&nbsp;Android, eclipse, Retrofit
+</p>
+<ul class="list-inline">
+<li>Client: Chipp'd</li>
+<li>Category: Mobile Development</li>
+</ul>
+<button class="btn btn-primary" data-dismiss="modal" type="button">
+<i class="fa fa-times"></i>
+Close Project
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Portfolio Modal 5 -->
+<div aria-hidden="true" class="portfolio-modal modal fade" id="portfolioModal5" role="dialog" tabindex="-1">
+<div class="modal-content">
+<div class="close-modal" data-dismiss="modal">
+<div class="lr">
+<div class="rl"></div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2">
+<div class="modal-body">
+<!-- Project Details Go Here -->
+<h2>Pledger</h2>
+<p class="item-intro text-muted">Sports Driven Fundraising!</p>
+<p>We are lucky to have such great customers; it's a lot more like friends in business and Pledger is no exception! The idea is to tie together the worlds of fantasy sports and charities. Pledger made simple and beautiful a priority for their systems. You should use it if even just for that reason.</p>
+<p><strong>Technologies used:</strong>&nbsp;Ruby on Rails, Android, Android Studio, Javascript, git, JSON, Cucumber, PhantomJS, and Sublime Text.
+</p>
+<ul class="list-inline">
+<li>Client: Pledger</li>
+<li>Category: Web Development, Mobile Development</li>
+</ul>
+<button class="btn btn-primary" data-dismiss="modal" type="button">
+<i class="fa fa-times"></i>
+Close Project
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Portfolio Modal 6 -->
+<div aria-hidden="true" class="portfolio-modal modal fade" id="portfolioModal6" role="dialog" tabindex="-1">
+<div class="modal-content">
+<div class="close-modal" data-dismiss="modal">
+<div class="lr">
+<div class="rl"></div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2">
+<div class="modal-body">
+<!-- Project Details Go Here -->
+<h2>Ripil</h2>
+<p class="item-intro text-muted">Do Good Things!</p>
+<p>Ripil wants to make a difference in the world. They want you help you make a difference and see the impact you have. In working with Ripil, we got to do what we love and help spread good will with mobile development, yay!</p>
+<p><strong>Technologies used:</strong>&nbsp;Android, Android Studio, JSON
+</p>
+<ul class="list-inline">
+<li>Client: Mobileaze</li>
+<li>Category: Mobile Development</li>
+</ul>
+<button class="btn btn-primary" data-dismiss="modal" type="button">
+<i class="fa fa-times"></i>
+Close Project
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- jQuery -->
+<script src="./js/jquery.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="./js/bootstrap.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="./js/jquery.easing.min.js"></script>
+<script src="./js/classie.js"></script>
+<script src="./js/cbpAnimatedHeader.js"></script>
+<!-- Contact Form JavaScript -->
+<script src="./js/jqBootstrapValidation.js"></script>
+<script src="./js/contact_me.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="./js/agency.js"></script>
+
+
+</body></html>

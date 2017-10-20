@@ -1,9 +1,0 @@
-== README
-
-This is the source for http://computeristsolutions.com. 
-
-
-== Technology Stack
-Hosted on Heroku, built with Ruby on Rails 4.x, AngularJS 1.x, and MongoDB (hosted on MongoLab).
-
-I set up git remotes for github, a test app on heroku, and the live app on heroku. Normal deployment flow starts with git commit, then 'git push && git push test master'. Once the test app is up and looks fine, I push to production.
