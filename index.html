@@ -20,10 +20,29 @@
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
 
+	<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
+	<script type="text/javascript">
+	   (function(){
+	      emailjs.init("user_hrpfJl1x0739bfq4HzPtp");
+	   })();
+	</script>
+	<script type="text/javascript">
+	    window.onload = function() {
+	        document.getElementById('contact-form').addEventListener('submit', function(event) {
+	            event.preventDefault();
+	            this.contact_number.value = Math.random() * 100000 | 0;
+	            emailjs.sendForm('contact_service', 'contact_template', this);
+							$("#contact-form").hide();
+							$("#thanks").removeClass("thank-you-hidden");
+							$("#thanks").show();
+	        });
+	    }
+	</script>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body class="index" id="page-top">
@@ -265,11 +284,25 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-12 text-center">
-					<p class="text-muted">
-						Email:
-						<a class="emailto" href="mailto:hello@computeristsolutions.com">hello [at] computeristsolutions.com</a>
-					</p>
+				<div id="thanks" class="col-lg-12 text-center thank-you-hidden">
+					<p class="thank-you">Thank you! Your message has been sent.</p>
+				</div>
+				<div class="col-lg-12 text-center contact-form">
+						<form id="contact-form" class="form-group">
+							 <input type="hidden" name="contact_number">
+							 <label>Name</label>
+							 <input type="text" name="from_name">
+							 <br/>
+							 <label>Email</label>
+							 <input type="email" name="from_email">
+							 <br/>
+							 <label>Message</label>
+							 <textarea name="message"></textarea>
+							 <br/>
+
+							 <!-- <div class="g-recaptcha" data-sitekey="6Lcxl3wUAAAAABEijaJe1-8z3FrzIiXJxXqLYuhK"></div> -->
+							 <input type="submit" value="Send">
+					 </form>
 				</div>
 			</div>
 		</div>

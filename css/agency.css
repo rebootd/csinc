@@ -662,24 +662,45 @@ section#contact .section-heading {
     color: #fff;
 }
 
-section#contact .form-group {
+section#contact * .form-group {
     margin-bottom: 25px;
 }
 
-section#contact .form-group input,
-section#contact .form-group textarea {
-    padding: 20px;
+section#contact * .form-group label {
+  width: 90px;
+  vertical-align: left;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  color: #bbb;
+  text-align: right;
 }
 
-section#contact .form-group input.form-control {
+.thank-you-hidden {
+  visibility: hidden;
+  height: 0px;
+}
+
+.thank-you {
+  font-size: 30px;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  color: #549cf9;
+}
+
+section#contact * .form-group input,
+section#contact * .form-group textarea {
+    padding: 12px;
+}
+
+section#contact * .form-group input.form-control {
     height: auto;
 }
 
-section#contact .form-group textarea.form-control {
+section#contact * .form-group textarea.form-control {
     height: 236px;
 }
 
-section#contact .form-control:focus {
+section#contact * .form-control:focus {
     border-color: #549cf9;
     box-shadow: none;
 }
