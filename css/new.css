@@ -1,0 +1,17 @@
+body {
+  background-attachment: fixed;
+  background-image: url('../img/header-light.jpg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.vertical-align-center {
+  align-items: center;
+}
+
+
+.header-form {
+  margin: 6em 0;
+  padding: 3em 1em;
+  background-color: rgba(0, 0, 0, 0.3);
+}
