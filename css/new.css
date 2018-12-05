@@ -15,3 +15,10 @@ body {
   padding: 3em 1em;
   background-color: rgba(0, 0, 0, 0.3);
 }
+
+.secondary-info-bg {
+  background-color: dimgrey;
+  padding: 3em 1em 10em 1em;
+  box-shadow: dimgrey 0px -70px 30px 45px;
+  margin-top: 7em;
+}
