@@ -1,14 +1,27 @@
 body {
   background-attachment: fixed;
-  background-image: url('../img/header-light.jpg');
+  background-image: url('../img/header-color.jpg');
   background-position: center center;
   background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Karma', serif;
 }
 
 .vertical-align-center {
   align-items: center;
 }
 
+.jumbo-area {
+  color: white;
+  letter-spacing: 1px;
+}
+
+.jumbo-area h1, .jumbo-area h2 {
+  letter-spacing: 2px;
+}
 
 .header-form {
   margin: 6em 0;
@@ -18,7 +31,5 @@ body {
 
 .secondary-info-bg {
   background-color: dimgrey;
-  padding: 3em 1em 10em 1em;
-  box-shadow: dimgrey 0px -70px 30px 45px;
-  margin-top: 7em;
+  padding: 3em 1em;
 }
