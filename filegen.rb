@@ -40,8 +40,8 @@ end
 File.write("robots.txt", robots + "\n")
 
 # publish
-# system 'git add *.html'
-# system 'git commit -m "updating site content"'
+system 'git add *.html'
+system 'git commit -m "updating site content"'
 # system 'git push'
 
 puts 'done!'
