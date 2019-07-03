@@ -80,6 +80,7 @@ File.write("#{list_page}", page_output)
 # publish
 if deployEnabled 
   system 'git add *.html'
+  system 'git add *.txt'
   system 'git commit -m "updating site content"'
   system 'git push'
 end
