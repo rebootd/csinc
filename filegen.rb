@@ -10,8 +10,11 @@ require 'json'
 # 
 # 
 	
+deployEnabled = true
 sourcepath = '../../../Dropbox/notes/sitecontent'
 outpath = './'
+list_markup = "#{outpath}list.html"
+list_page = "#{outpath}list.html"
 mapfile = "#{sourcepath}/contentmap.json"
 mdfiles = Dir["#{sourcepath}/*.md"]
 markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
@@ -30,6 +33,8 @@ site_template_source = File.read(default_template)
 puts contentmap["site.title"]
 puts contentmap["site.description"]
 
+page_names = Array.new
+
 pages.each do | entry |
   in_filename = "#{sourcepath}/#{entry["file"]}"
   puts "processing: #{in_filename}"
@@ -42,16 +47,41 @@ pages.each do | entry |
   	.gsub("{{site.title}}", contentmap["site.title"])
   	.gsub("{{site.description}}", contentmap["site.description"])
   output_name = File.basename(in_filename, ".*") + ".html"
+  page_names << output_name
   puts "...writing: #{output_name}"
   File.write("#{output_name}", page_output)
   robots = "#{robots}\nDisallow: #{output_name}" if entry["allowsearch"] == "false"
 end
 
+# write robots file
+robots = "#{robots}\nDisallow: list.html"
 File.write("robots.txt", robots + "\n")
 
+# now write list.md and generage list.html
+puts "pages:"
+puts page_names
+File.open(list_page, 'w') { |file| 
+  file.write("\# List Pages\n\n\#\# pages:\n") 
+  page_names.each do | entry |
+    file.write("1. [#{File.basename(entry, ".*")}](#{entry})\n")
+  end
+}
+
+md_source = File.read(list_markup)
+html_output = Markdown.new(md_source).to_html
+page_output = site_template_source.gsub("{{page.body}}", html_output).gsub("{{page.title}}", "extra list pages")
+  .gsub("{{page.keywords}}", "")
+  .gsub("{{page.description}}", "extra list page")
+  .gsub("{{site.title}}", "extra list page")
+  .gsub("{{site.description}}", "extra list page")
+File.write("#{list_page}", page_output)
+
+
 # publish
-system 'git add *.html'
-system 'git commit -m "updating site content"'
-system 'git push'
+if deployEnabled 
+  system 'git add *.html'
+  system 'git commit -m "updating site content"'
+  system 'git push'
+end
 
 puts 'done!'

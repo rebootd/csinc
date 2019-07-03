@@ -2,3 +2,5 @@ User-agent: *
 Disallow: /cgi-bin/
 Disallow: topic.html
 Disallow: kalispell2019.html
+Disallow: yosemite2019.html
+Disallow: list.html
