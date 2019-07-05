@@ -4,4 +4,5 @@ Disallow: topic.html
 Disallow: glacier2014.html
 Disallow: kalispell2019.html
 Disallow: yosemite2019.html
+Disallow: turkey_bolognese.html
 Disallow: list.html
