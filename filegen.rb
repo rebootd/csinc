@@ -10,7 +10,7 @@ require 'json'
 # 
 # 
 	
-deployEnabled = true
+deployEnabled = false
 sourcepath = '../../../Dropbox/notes/sitecontent'
 outpath = './'
 list_markup = "#{outpath}list.html"
@@ -37,6 +37,8 @@ page_names = Array.new
 
 pages.each do | entry |
   in_filename = "#{sourcepath}/#{entry["file"]}"
+  next if !File.file?(in_filename)
+
   puts "processing: #{in_filename}"
   md_source = File.read(in_filename)
   html_output = Markdown.new(md_source).to_html
@@ -47,10 +49,10 @@ pages.each do | entry |
   	.gsub("{{site.title}}", contentmap["site.title"])
   	.gsub("{{site.description}}", contentmap["site.description"])
   output_name = File.basename(in_filename, ".*") + ".html"
-  page_names << output_name
+  page_names << output_name if entry["list_include"]
   puts "...writing: #{output_name}"
   File.write("#{output_name}", page_output)
-  robots = "#{robots}\nDisallow: #{output_name}" if entry["allowsearch"] == "false"
+  robots = "#{robots}\nDisallow: #{output_name}" if entry["allowsearch"]
 end
 
 # write robots file
@@ -61,9 +63,9 @@ File.write("robots.txt", robots + "\n")
 puts "pages:"
 puts page_names
 File.open(list_page, 'w') { |file| 
-  file.write("\# List Pages\n\n\#\# pages:\n") 
+  file.write("\# Site Directory\n\n\#\# pages:\n") 
   page_names.each do | entry |
-    file.write("1. [#{File.basename(entry, ".*")}](#{entry})\n")
+    file.write("- [#{File.basename(entry, ".*")}](#{entry})\n")
   end
 }
 
