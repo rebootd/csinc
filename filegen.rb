@@ -10,7 +10,7 @@ require 'json'
 # 
 # 
 	
-deployEnabled = false
+deployEnabled = true
 sourcepath = '../../../Dropbox/notes/sitecontent'
 outpath = './'
 list_markup = "#{outpath}list.html"
