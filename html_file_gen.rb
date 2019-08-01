@@ -28,6 +28,7 @@ class HtmlFileGen
   	  .gsub("{{page.description}}", @page_data["page.description"])
   	  .gsub("{{site.title}}", @site_title)
   	  .gsub("{{site.description}}", @site_description)
+  	  .gsub("{{page.updated}}", Time.now.getutc.to_s)
     @output_file = File.basename(@input_file, ".*") + ".html"
     
     puts "...writing: #{@output_file}"
