@@ -15,13 +15,13 @@ require_relative 'git_repo_deployment'
 
 deployEnabled = true
 sourcepath = '../../../Dropbox/notes/sitecontent'
-outpath = './'
+outpath = ''
 list_markup = "#{outpath}list.html"
 list_page = "#{outpath}list.html"
+robot_file = "#{outpath}robots.txt"
 mapfile = "#{sourcepath}/contentmap.json"
 mdfiles = Dir["#{sourcepath}/*.md"]
 markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
-robot_file = "robots.txt"
 
 map_content = File.read(mapfile)
 contentmap = JSON.parse(map_content)
@@ -37,7 +37,7 @@ site_template_source = File.read(default_template)
 puts contentmap["site.title"]
 puts contentmap["site.description"]
 
-page_names = Array.new
+page_names = []
 files = []
 
 pages.each do | entry |
@@ -55,9 +55,11 @@ pages.each do | entry |
     site_title: contentmap["site.title"], 
     site_description: contentmap["site.description"] )
 
-  page_names << html_gen.output_file if entry["list_include"] && html_gen.output_file
-  puts "...writing: #{html_gen.output_file}"
   html_gen.generate
+
+  puts "completed: #{html_gen.output_file}"
+  page_names << html_gen.output_file if entry["list_include"]
+  
   files << html_gen.output_file
 
   # File.write("#{html_gen.output_file}", page_output)
@@ -71,8 +73,8 @@ File.write(robot_file, robots + "\n")
 files << robot_file
 
 # now write list.md and generage list.html
-puts "pages:"
-puts page_names
+# puts "pages:"
+# puts page_names
 File.open(list_page, 'w') { |file| 
   file.write("\# Site Directory\n\n\#\# pages:\n") 
   page_names.each do | entry |
@@ -80,32 +82,30 @@ File.open(list_page, 'w') { |file|
   end
 }
 
-md_source = File.read(list_markup)
-html_output = Markdown.new(md_source).to_html
-page_output = site_template_source.gsub("{{page.body}}", html_output).gsub("{{page.title}}", "extra list pages")
-  .gsub("{{page.keywords}}", "")
-  .gsub("{{page.description}}", "extra list page")
-  .gsub("{{site.title}}", "extra list page")
-  .gsub("{{site.description}}", "extra list page")
-File.write("#{list_page}", page_output)
+list_entry = JSON.parse("{\"page.title\":\"extra list pages\",\"page.keywords\":\"\",\"page.description\":\"extra list page\",\"site.title\":\"extra list page\",\"site.description\":\"extra list page\"}")
 
+list_gen = HtmlFileGen.new( input_path: sourcepath, 
+    input_file: list_markup, 
+    output_path: outpath, 
+    template_file: default_template, 
+    page_data: list_entry, 
+    site_title: contentmap["site.title"], 
+    site_description: contentmap["site.description"] )
+
+list_gen.generate
 files << list_page
 
 # deployment handlers
+puts 'files: '
 puts files
 repo = GitRepoDeployment.new(files: files, credentials: nil)
 deployments = [ repo ]
 
 # publish
 if deployEnabled 
-
   deployments.each do | deployment |
     deployment.deploy() if deployment.class < FileDeployment
   end
-  # system 'git add *.html'
-  # system 'git add *.txt'
-  # system 'git commit -m "updating site content"'
-  # system 'git push'
 end
 
 puts 'done!'

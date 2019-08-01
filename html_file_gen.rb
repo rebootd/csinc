@@ -17,7 +17,6 @@ class HtmlFileGen
   end
 
   def generate
-  	puts "processing: #{@input_file}"
     md_source = File.read(@input_file)
     html_output = Markdown.new(md_source).to_html
     page_template_source = File.read(template_file)
@@ -31,7 +30,6 @@ class HtmlFileGen
   	  .gsub("{{page.updated}}", Time.now.getutc.to_s)
     @output_file = File.basename(@input_file, ".*") + ".html"
     
-    puts "...writing: #{@output_file}"
     File.write("#{@output_file}", page_output)
   end
 end
