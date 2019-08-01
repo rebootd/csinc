@@ -2,6 +2,8 @@
 require 'redcarpet'
 require 'json'
 require_relative 'html_file_gen'
+require_relative 'file_deployment'
+require_relative 'git_repo_deployment'
 
 # templates ideas
 # 
@@ -11,7 +13,7 @@ require_relative 'html_file_gen'
 # 
 # 
 
-deployEnabled = false
+deployEnabled = true
 sourcepath = '../../../Dropbox/notes/sitecontent'
 outpath = './'
 list_markup = "#{outpath}list.html"
@@ -51,16 +53,6 @@ pages.each do | entry |
     site_title: contentmap["site.title"], 
     site_description: contentmap["site.description"] )
 
-  # md_source = File.read(in_filename)
-  # html_output = Markdown.new(md_source).to_html
-  # page_template_source = File.read(page_template_file)
-  # page_output = page_template_source.gsub("{{page.body}}", html_output).gsub("{{page.title}}", entry["page.title"])
-  # 	.gsub("{{page.keywords}}", entry["page.keywords"])
-  # 	.gsub("{{page.description}}", entry["page.description"])
-  # 	.gsub("{{site.title}}", contentmap["site.title"])
-  # 	.gsub("{{site.description}}", contentmap["site.description"])
-  # output_name = File.basename(in_filename, ".*") + ".html"
-  
   page_names << html_gen.output_file if entry["list_include"] && html_gen.output_file
   puts "...writing: #{html_gen.output_file}"
   html_gen.generate
@@ -92,13 +84,21 @@ page_output = site_template_source.gsub("{{page.body}}", html_output).gsub("{{pa
   .gsub("{{site.description}}", "extra list page")
 File.write("#{list_page}", page_output)
 
+# deployment handlers
+repo = GitRepoDeployment.new(files: [], credentials: nil)
+
+deployments = [ repo ]
 
 # publish
 if deployEnabled 
-  system 'git add *.html'
-  system 'git add *.txt'
-  system 'git commit -m "updating site content"'
-  system 'git push'
+
+  deployments.each do | deployment |
+    deployment.deploy() if deployment.class < FileDeployment
+  end
+  # system 'git add *.html'
+  # system 'git add *.txt'
+  # system 'git commit -m "updating site content"'
+  # system 'git push'
 end
 
 puts 'done!'
