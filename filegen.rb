@@ -21,6 +21,7 @@ list_page = "#{outpath}list.html"
 mapfile = "#{sourcepath}/contentmap.json"
 mdfiles = Dir["#{sourcepath}/*.md"]
 markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
+robot_file = "robots.txt"
 
 map_content = File.read(mapfile)
 contentmap = JSON.parse(map_content)
@@ -37,6 +38,7 @@ puts contentmap["site.title"]
 puts contentmap["site.description"]
 
 page_names = Array.new
+files = []
 
 pages.each do | entry |
   in_filename = "#{sourcepath}/#{entry["file"]}"
@@ -56,6 +58,7 @@ pages.each do | entry |
   page_names << html_gen.output_file if entry["list_include"] && html_gen.output_file
   puts "...writing: #{html_gen.output_file}"
   html_gen.generate
+  files << html_gen.output_file
 
   # File.write("#{html_gen.output_file}", page_output)
   robots = "#{robots}\nDisallow: #{html_gen.output_file}" if entry["allowsearch"]
@@ -63,7 +66,9 @@ end
 
 # write robots file
 robots = "#{robots}\nDisallow: list.html"
-File.write("robots.txt", robots + "\n")
+File.write(robot_file, robots + "\n")
+
+files << robot_file
 
 # now write list.md and generage list.html
 puts "pages:"
@@ -84,9 +89,11 @@ page_output = site_template_source.gsub("{{page.body}}", html_output).gsub("{{pa
   .gsub("{{site.description}}", "extra list page")
 File.write("#{list_page}", page_output)
 
-# deployment handlers
-repo = GitRepoDeployment.new(files: [], credentials: nil)
+files << list_page
 
+# deployment handlers
+puts files
+repo = GitRepoDeployment.new(files: files, credentials: nil)
 deployments = [ repo ]
 
 # publish
