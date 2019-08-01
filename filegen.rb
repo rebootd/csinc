@@ -1,6 +1,7 @@
 #!/usr/bin/ruby
 require 'redcarpet'
 require 'json'
+require_relative 'html_file_gen'
 
 # templates ideas
 # 
@@ -9,8 +10,8 @@ require 'json'
 #
 # 
 # 
-	
-deployEnabled = true
+
+deployEnabled = false
 sourcepath = '../../../Dropbox/notes/sitecontent'
 outpath = './'
 list_markup = "#{outpath}list.html"
@@ -40,19 +41,32 @@ pages.each do | entry |
   next if !File.file?(in_filename)
 
   puts "processing: #{in_filename}"
-  md_source = File.read(in_filename)
-  html_output = Markdown.new(md_source).to_html
-  page_template_source = entry["template.file"] ? File.read("#{sourcepath}/#{entry["template.file"]}") : site_template_source
-  page_output = page_template_source.gsub("{{page.body}}", html_output).gsub("{{page.title}}", entry["page.title"])
-  	.gsub("{{page.keywords}}", entry["page.keywords"])
-  	.gsub("{{page.description}}", entry["page.description"])
-  	.gsub("{{site.title}}", contentmap["site.title"])
-  	.gsub("{{site.description}}", contentmap["site.description"])
-  output_name = File.basename(in_filename, ".*") + ".html"
-  page_names << output_name if entry["list_include"]
-  puts "...writing: #{output_name}"
-  File.write("#{output_name}", page_output)
-  robots = "#{robots}\nDisallow: #{output_name}" if entry["allowsearch"]
+  page_template_file = entry["template.file"] ? "#{sourcepath}/#{entry["template.file"]}" : default_template
+
+  html_gen = HtmlFileGen.new( input_path: sourcepath, 
+    input_file: in_filename, 
+    output_path: outpath, 
+    template_file: page_template_file, 
+    page_data: entry, 
+    site_title: contentmap["site.title"], 
+    site_description: contentmap["site.description"] )
+
+  # md_source = File.read(in_filename)
+  # html_output = Markdown.new(md_source).to_html
+  # page_template_source = File.read(page_template_file)
+  # page_output = page_template_source.gsub("{{page.body}}", html_output).gsub("{{page.title}}", entry["page.title"])
+  # 	.gsub("{{page.keywords}}", entry["page.keywords"])
+  # 	.gsub("{{page.description}}", entry["page.description"])
+  # 	.gsub("{{site.title}}", contentmap["site.title"])
+  # 	.gsub("{{site.description}}", contentmap["site.description"])
+  # output_name = File.basename(in_filename, ".*") + ".html"
+  
+  page_names << html_gen.output_file if entry["list_include"] && html_gen.output_file
+  puts "...writing: #{html_gen.output_file}"
+  html_gen.generate
+
+  # File.write("#{html_gen.output_file}", page_output)
+  robots = "#{robots}\nDisallow: #{html_gen.output_file}" if entry["allowsearch"]
 end
 
 # write robots file
