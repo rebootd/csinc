@@ -88,13 +88,14 @@ class SiteContentGenerator
 	files << list_page
 
 	# deployment handlers
-	puts 'files: '
-	puts files
+	# puts 'files: '
+	# puts files
 
 	# publish
 	if deployEnabled 
 	  deployments.each do | deployment |
 	  	deployment.files = files
+	  	puts deployment.files
 	    deployment.deploy() if deployment.class < FileDeployment
 	  end
 	end
