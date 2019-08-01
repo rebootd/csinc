@@ -93,6 +93,7 @@ class SiteContentGenerator
 	  	deployment.files = files
 	  	puts "\r\ndeployment files:"
 	  	puts deployment.files
+	  	puts "\r\n"
 	    deployment.deploy() if deployment.class < FileDeployment
 	  end
 	end
