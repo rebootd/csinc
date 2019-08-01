@@ -91,7 +91,7 @@ class SiteContentGenerator
 	if deployEnabled 
 	  deployments.each do | deployment |
 	  	deployment.files = files
-	  	puts "deployment files:"
+	  	puts "\r\ndeployment files:"
 	  	puts deployment.files
 	    deployment.deploy() if deployment.class < FileDeployment
 	  end
