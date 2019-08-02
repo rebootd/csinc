@@ -30,6 +30,6 @@ class HtmlFileGen
   	  .gsub("{{page.updated}}", Time.now.getutc.to_s)
     @output_file = File.basename(@input_file, ".*") + ".html"
     
-    File.write("#{@output_file}", page_output)
+    File.write("#{@output_path}/#{@output_file}", page_output)
   end
 end

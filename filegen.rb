@@ -7,7 +7,7 @@ require_relative 'git_repo_deployment'
 require_relative 'rsync_ssh_deployment'
 require_relative 'site_content_generator'
 
-outpath = ''
+outpath = './'
 sourcepath = '../../../Dropbox/notes/sitecontent'
 mapfile = "#{sourcepath}/contentmap.json"
 
@@ -15,14 +15,16 @@ mapfile = "#{sourcepath}/contentmap.json"
 rscync_cred = DeploymentCredentials.new
 rscync_cred.user = "webuser"
 rscync_cred.password = "password"
-deployments = [ GitRepoDeployment.new(files: [], credentials: RsyncSshDeployment.new(rscync_cred)) ]
+rscync_cred.server = "coffmanfam.com:/var/www/html"
+rscync_cred.connect_options = "12022"
+deployments = [ RsyncSshDeployment.new(source_path: outpath, files: [], credentials: rscync_cred) ]
 
 site = SiteContentGenerator.new(deployEnabled: true, 
   sourcepath: '../../../Dropbox/notes/sitecontent', 
-  outpath: '', 
-  list_markup: "#{outpath}list.md", 
-  list_page: "#{outpath}list.html",
-  robot_file: "#{outpath}robots.txt", 
+  outpath: outpath, 
+  list_markup: "list.md", 
+  list_page: "list.html",
+  robot_file: "robots.txt", 
   mapfile: mapfile, 
   mdfiles: Dir["#{sourcepath}/*.md"], 
   contentmap: JSON.parse(File.read(mapfile)),

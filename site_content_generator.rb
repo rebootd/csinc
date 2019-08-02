@@ -26,9 +26,6 @@ class SiteContentGenerator
 
 	site_template_source = File.read(default_template)
 
-	puts @contentmap["site.title"]
-	puts @contentmap["site.description"]
-
 	page_names = []
 	files = []
 
@@ -36,7 +33,7 @@ class SiteContentGenerator
 	  in_filename = "#{@sourcepath}/#{entry["file"]}"
 	  next if !File.file?(in_filename)
 
-	  puts "processing: #{in_filename}"
+	  # puts "processing: #{in_filename}"
 	  page_template_file = entry["template.file"] ? "#{@sourcepath}/#{entry["template.file"]}" : @default_template
 
 	  html_gen = HtmlFileGen.new( input_path: @sourcepath, 
@@ -49,7 +46,7 @@ class SiteContentGenerator
 
 	  html_gen.generate
 
-	  puts "completed: #{html_gen.output_file}"
+	  # puts "completed: #{html_gen.output_file}"
 	  page_names << html_gen.output_file if entry["list_include"]
 	  
 	  files << html_gen.output_file
@@ -60,14 +57,14 @@ class SiteContentGenerator
 
 	# write robots file
 	robots = "#{robots}\nDisallow: list.html"
-	File.write(@robot_file, robots + "\n")
+	File.write("#{@outpath}/#{@robot_file}", robots + "\n")
 
 	files << robot_file
 
 	# now write list.md and generage list.html
 	# puts "pages:"
 	# puts page_names
-	File.open(@list_markup, 'w') { |file| 
+	File.open("#{@outpath}/#{@list_markup}", 'w') { |file| 
 	  file.write("\# Site Directory\n\n\#\# pages:\n") 
 	  page_names.each do | entry |
 	    file.write("- [#{File.basename(entry, ".*")}](#{entry})\n")
@@ -91,9 +88,6 @@ class SiteContentGenerator
 	if deployEnabled 
 	  deployments.each do | deployment |
 	  	deployment.files = files
-	  	puts "\r\ndeployment files:"
-	  	puts deployment.files
-	  	puts "\r\n"
 	    deployment.deploy() if deployment.class < FileDeployment
 	  end
 	end
