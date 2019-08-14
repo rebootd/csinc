@@ -102,7 +102,7 @@
 
 <p>android doc: <a href="https://developer.android.com/training/app-links/deep-linking">https://developer.android.com/training/app-links/deep-linking</a></p>
 
-<pre><code>```xml
+<p><code>xml
 &lt;activity
     android:name=&quot;com.example.android.GizmosActivity&quot;
     android:label=&quot;@string/title_gizmos&quot; &gt;
@@ -126,24 +126,24 @@
             android:pathPattern=&quot;/.*\.ip&quot; /&gt;
     &lt;/intent-filter&gt;
 &lt;/activity&gt;
-```
+</code></p>
 
+<p><code>java // its actually kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.main)
     val action: String? = intent?.action
     val data: Uri? = intent?.data
 }
-</code></pre>
+</code></p>
 
 <h3>test the deeplink...</h3>
 
-<pre><code>```bash
+<p><code>bash
 $ adb shell am start
         -W -a android.intent.action.VIEW
         -d &quot;example://gizmos&quot; com.example.android
-```
-</code></pre>
+</code></p>
 
 <h3>maybe show a basic demo here</h3>
 
@@ -153,11 +153,10 @@ $ adb shell am start
 
 <p><a href="https://developer.android.com/training/app-links/verify-site-associations">https://developer.android.com/training/app-links/verify-site-associations</a></p>
 
-<pre><code>```xml
+<p><code>xml
 &lt;intent-filter android:autoVerify=&quot;true&quot;&gt;
     ...
-```
-</code></pre>
+</code></p>
 
 <hr>
 
@@ -225,7 +224,7 @@ $ adb shell am start
           </div>
         </div>
         <div class="demo-container mdl-grid font-weight-lighter">
-          last update: 2019-08-14 04:31:28 UTC
+          last update: 2019-08-14 04:33:41 UTC
         </div>
       </main>
     </div>
