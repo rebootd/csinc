@@ -102,60 +102,51 @@
 
 <p>android doc: <a href="https://developer.android.com/training/app-links/deep-linking">https://developer.android.com/training/app-links/deep-linking</a></p>
 
-<p>```xml
-<activity
-    android:name="com.example.android.GizmosActivity"
-    android:label="@string/title_gizmos" ></p>
+<pre><code>```xml
+&lt;activity
+    android:name=&quot;com.example.android.GizmosActivity&quot;
+    android:label=&quot;@string/title_gizmos&quot; &gt;
+    &lt;intent-filter&gt;
+      ...
+      &lt;data android:scheme=&quot;https&quot; android:host=&quot;www.example.com&quot; /&gt;
+      &lt;data android:scheme=&quot;app&quot; android:host=&quot;open.my.app&quot; /&gt;
+    &lt;/intent-filter&gt;
+    &lt;intent-filter android:autoVerify=&quot;true&quot;&gt;
+        &lt;action android:name=&quot;android.intent.action.VIEW&quot; /&gt;
+        &lt;category android:name=&quot;android.intent.category.DEFAULT&quot; /&gt;
+        &lt;category android:name=&quot;android.intent.category.BROWSABLE&quot; /&gt;
+        &lt;data android:scheme=&quot;http&quot; /&gt;
+        &lt;data android:scheme=&quot;https&quot; /&gt;
+        &lt;data android:host=&quot;www.example.com&quot; /&gt;
+        &lt;data
+            android:host=&quot;www.example.com&quot;
+            android:pathPattern=&quot;/.*\.cp&quot; /&gt;
+        &lt;data
+            android:host=&quot;www.example.com&quot;
+            android:pathPattern=&quot;/.*\.ip&quot; /&gt;
+    &lt;/intent-filter&gt;
+&lt;/activity&gt;
+```
 
-<pre><code>&lt;intent-filter&gt;
-  ...
-  &lt;data android:scheme=&quot;https&quot; android:host=&quot;www.example.com&quot; /&gt;
-  &lt;data android:scheme=&quot;app&quot; android:host=&quot;open.my.app&quot; /&gt;
-&lt;/intent-filter&gt;
-
-&lt;intent-filter android:autoVerify=&quot;true&quot;&gt;
-    &lt;action android:name=&quot;android.intent.action.VIEW&quot; /&gt;
-
-    &lt;category android:name=&quot;android.intent.category.DEFAULT&quot; /&gt;
-    &lt;category android:name=&quot;android.intent.category.BROWSABLE&quot; /&gt;
-
-    &lt;data android:scheme=&quot;http&quot; /&gt;
-    &lt;data android:scheme=&quot;https&quot; /&gt;
-    &lt;data android:host=&quot;www.example.com&quot; /&gt;
-
-    &lt;data
-        android:host=&quot;www.example.com&quot;
-        android:pathPattern=&quot;/.*\.cp&quot; /&gt;
-    &lt;data
-        android:host=&quot;www.example.com&quot;
-        android:pathPattern=&quot;/.*\.ip&quot; /&gt;
-
-&lt;/intent-filter&gt;
-</code></pre>
-
-<p></activity></p>
-
-<p>```</p>
-
-<p>```java // its actually kotlin
+```java // its actually kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.main)</p>
+    setContentView(R.layout.main)
 
-<pre><code>val action: String? = intent?.action
-val data: Uri? = intent?.data
+    val action: String? = intent?.action
+    val data: Uri? = intent?.data
+}
+```
 </code></pre>
-
-<p>}
-```</p>
 
 <h3>test the deeplink...</h3>
 
-<p><code>bash
+<pre><code>```bash
 $ adb shell am start
         -W -a android.intent.action.VIEW
         -d &quot;example://gizmos&quot; com.example.android
-</code></p>
+```
+</code></pre>
 
 <h3>maybe show a basic demo here</h3>
 
@@ -165,10 +156,11 @@ $ adb shell am start
 
 <p><a href="https://developer.android.com/training/app-links/verify-site-associations">https://developer.android.com/training/app-links/verify-site-associations</a></p>
 
-<p><code>xml
+<pre><code>```xml
 &lt;intent-filter android:autoVerify=&quot;true&quot;&gt;
     ...
-</code></p>
+```
+</code></pre>
 
 <hr>
 
@@ -236,7 +228,7 @@ $ adb shell am start
           </div>
         </div>
         <div class="demo-container mdl-grid font-weight-lighter">
-          last update: 2019-08-14 04:28:29 UTC
+          last update: 2019-08-14 04:29:27 UTC
         </div>
       </main>
     </div>
