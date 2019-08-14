@@ -125,24 +125,23 @@
             android:pathPattern=&quot;/.*\.ip&quot; /&gt;
     &lt;/intent-filter&gt;
 &lt;/activity&gt;
-</code></pre>
 
-<p><code>
+
+
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.main)
     val action: String? = intent?.action
     val data: Uri? = intent?.data
 }
-</code></p>
+</code></pre>
 
 <h3>test the deeplink...</h3>
 
-<p><code>
-$ adb shell am start
+<pre><code>$ adb shell am start
         -W -a android.intent.action.VIEW
         -d &quot;example://gizmos&quot; com.example.android
-</code></p>
+</code></pre>
 
 <h3>maybe show a basic demo here</h3>
 
@@ -152,10 +151,8 @@ $ adb shell am start
 
 <p><a href="https://developer.android.com/training/app-links/verify-site-associations">https://developer.android.com/training/app-links/verify-site-associations</a></p>
 
-<p><code>
-&lt;intent-filter android:autoVerify=&quot;true&quot;&gt;
-    ...
-</code></p>
+<pre><code>&lt;intent-filter android:autoVerify=&quot;true&quot;&gt;
+</code></pre>
 
 <hr>
 
@@ -223,7 +220,7 @@ $ adb shell am start
           </div>
         </div>
         <div class="demo-container mdl-grid font-weight-lighter">
-          last update: 2019-08-14 04:37:47 UTC
+          last update: 2019-08-14 04:38:54 UTC
         </div>
       </main>
     </div>
