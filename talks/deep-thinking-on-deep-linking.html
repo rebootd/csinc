@@ -127,17 +127,16 @@
     &lt;/intent-filter&gt;
 &lt;/activity&gt;
 ```
+</code></pre>
 
-```java // its actually kotlin
+<p><code>java // its actually kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.main)
-
     val action: String? = intent?.action
     val data: Uri? = intent?.data
 }
-```
-</code></pre>
+</code></p>
 
 <h3>test the deeplink...</h3>
 
@@ -228,7 +227,7 @@ $ adb shell am start
           </div>
         </div>
         <div class="demo-container mdl-grid font-weight-lighter">
-          last update: 2019-08-14 04:29:27 UTC
+          last update: 2019-08-14 04:30:28 UTC
         </div>
       </main>
     </div>
