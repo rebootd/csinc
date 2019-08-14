@@ -106,18 +106,23 @@
 
 <h3>talk intro here</h3>
 
-<p>why deeplinks matter, etc.</p>
+<p>why deeplinks matter, etc.
+- sharing content, marketting/advertising, 
+- navigating from bookmarks, 
+- searchable
+- analytics / user attribution</p>
 
-<p>similar parralells to early internet and searching - not going directly to content.</p>
+<p>similar parallels to early internet and searching - not going directly to content.</p>
 
-<h3>talk about tandards</h3>
+<p>simple at first, harder later</p>
 
-<ul>
-<li>URI schemes</li>
-<li>Chrome Intents</li>
-<li>App Links (Android)</li>
-<li>App Links (Facebook)</li>
-</ul>
+<h3>how deeplinks are handled android</h3>
+
+<ol>
+<li>Open the user&#39;s preferred app that can handle the URI, if one is designated.</li>
+<li>Open the only available app that can handle the URI.</li>
+<li>Allow the user to select an app from a dialog.</li>
+</ol>
 
 <h2>PROMPT: android deeplink basics</h2>
 
@@ -201,6 +206,21 @@ $ adb shell am start
 
 <h3>libraries and other ideas to manage</h3>
 
+<ul>
+<li>single activity</li>
+<li>central router code</li>
+<li>AirBnB&#39;s DeepLinkListener</li>
+<li>make your own route plus handling activity/method</li>
+</ul>
+
+<h2>how about testing</h2>
+
+<ul>
+<li>testing the router</li>
+<li>testing the ui behavior</li>
+<li>maybe take screenshots</li>
+</ul>
+
 <h3>no perfect answer, and probably won&#39;t be for some time</h3>
 
 <hr>
@@ -214,13 +234,33 @@ $ adb shell am start
 <li>???</li>
 </ul>
 
-<p><a href="https://blog.branch.io/the-ultimate-guide-to-web-and-app-user-attribution-best-practices-cross-platform-cross-channel-2018/">https://blog.branch.io/the-ultimate-guide-to-web-and-app-user-attribution-best-practices-cross-platform-cross-channel-2018/</a></p>
+<hr>
+
+<h2>PROMPT: credits nd resources</h2>
+
+<h3>notes</h3>
+
+<ul>
+<li>content mostly based on experience at Walmart Labs</li>
+<li>advice from branchio devs</li>
+</ul>
+
+<h3>links</h3>
+
+<ul>
+<li><a href="https://developer.android.com/training/app-links/deep-linking">https://developer.android.com/training/app-links/deep-linking</a></li>
+<li><a href="https://blog.branch.io/the-ultimate-guide-to-web-and-app-user-attribution-best-practices-cross-platform-cross-channel-2018/">https://blog.branch.io/the-ultimate-guide-to-web-and-app-user-attribution-best-practices-cross-platform-cross-channel-2018/</a></li>
+<li><a href="https://hackernoon.com/the-death-of-deep-linking-6cc65eb33e28">https://hackernoon.com/the-death-of-deep-linking-6cc65eb33e28</a></li>
+<li><a href="https://www.slideshare.net/alexdbauer/mobile-deep-link-standards">https://www.slideshare.net/alexdbauer/mobile-deep-link-standards</a></li>
+<li><a href="https://firebase.google.com/docs/dynamic-links/">https://firebase.google.com/docs/dynamic-links/</a></li>
+<li><a href="https://developer.android.com/training/app-links/verify-site-associations">https://developer.android.com/training/app-links/verify-site-associations</a></li>
+</ul>
 
             
           </div>
         </div>
         <div class="demo-container mdl-grid font-weight-lighter">
-          last update: 2019-08-14 03:19:29 UTC
+          last update: 2019-08-14 03:39:04 UTC
         </div>
       </main>
     </div>
