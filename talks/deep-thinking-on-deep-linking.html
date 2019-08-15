@@ -143,7 +143,46 @@ override fun onCreate(savedInstanceState: Bundle?) {
         -d &quot;example://gizmos&quot; com.example.android
 </code></pre>
 
-<h3>maybe show a basic demo here</h3>
+<h3>Sample 1</h3>
+
+<h4>test:</h4>
+
+<blockquote>
+<p>adb shell am start -W -a android.intent.action.VIEW -d &quot;computeristsolutions://first&quot; com.example.deeplinksample1
+adb shell am start -W -a android.intent.action.VIEW -d &quot;computeristsolutions://second&quot; com.example.deeplinksample1</p>
+</blockquote>
+
+<h4>talking points:</h4>
+
+<ul>
+<li>no backstack</li>
+<li>intent filter on each activity</li>
+<li>simple and by the book</li>
+<li>gets harder to maintain as number of deeplinks increases</li>
+</ul>
+
+<h3>Sample 2</h3>
+
+<h4>test:</h4>
+
+<blockquote>
+<p>adb shell am start -W -a android.intent.action.VIEW -d &quot;computeristsolutions://first&quot; com.example.deeplinksample2
+adb shell am start -W -a android.intent.action.VIEW -d &quot;computeristsolutions://second&quot; com.example.deeplinksample2</p>
+</blockquote>
+
+<h4>talking points:</h4>
+
+<ul>
+<li>solves backstack in this example because we use the Main activity; doesn&#39;t work for all cases</li>
+<li>centralized routing easier to maintain</li>
+<li>dynamic routing would be better
+
+<ul>
+<li>limit: still must be defined in manifest</li>
+</ul></li>
+<li>cold start vs warm start</li>
+<li>user attribution is useful information</li>
+</ul>
 
 <hr>
 
@@ -220,7 +259,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
           </div>
         </div>
         <div class="demo-container mdl-grid font-weight-lighter">
-          last update: 2019-08-14 15:20:38 UTC
+          last update: 2019-08-15 01:02:07 UTC
         </div>
       </main>
     </div>
