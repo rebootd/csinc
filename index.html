@@ -36,7 +36,7 @@
 								<li><a href="#intro">Intro</a></li>
 								<li><a href="#work">Work</a></li>
 								<li><a href="#about">About</a></li>
-								<li><a href="#contact-soon">Soon</a></li>
+								<li><a href="#contact">Contact</a></li>
 								<!--<li><a href="#elements">Elements</a></li>-->
 							</ul>
 						</nav>
@@ -90,7 +90,7 @@
 										</div>
 									</div>
 									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="submit" id="sendButton" value="Send Message" class="primary" /></li>
 										<li><input type="reset" value="Reset" /></li>
 									</ul>
 								</form>
@@ -363,6 +363,64 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+			<script type="text/javascript">
+			   (function(){
+			      emailjs.init("user_VAna2OSKnYW439DBsdWbP");
+
+			      $('#sendButton').on("click",function() {
+			      	clearErrors();
+			      	if ( isFormValid() ) {
+			      		sendContact();
+			      		$('div.close').click();
+			      		clearnForm();
+			      	}
+			      	return false;
+			      });
+			   })();
+
+			   function isFormValid() {
+			   	var isValid = true;
+			   	if($('#name').val().trim().length == 0) {
+			   		setError($('#name'));
+			   		isValid = false;
+			   	}
+			   	if($('#email').val().trim().length == 0) {
+			   		setError($('#email'));
+			   		isValid = false;
+			   	}
+			   	if($('#message').val().trim().length == 0) {
+			   		setError($('#message'))
+			   		isValid = false;
+			   	}
+			   	return isValid;
+			   }
+
+			   function sendContact() {
+				var template_params = {
+					"from_name": $('#name').val(),
+					"reply_to": $('#email').val(),
+					"message_html": $('#message').val()
+				}
+
+				var service_id = "default_service";
+				var template_id = "template_asHTCuXL";
+				emailjs.send(service_id, template_id, template_params);
+			   }
+
+			   function setError(element) {
+			   	$(element).addClass('error').css('border-color','red');
+			   }
+
+			   function clearErrors() {
+			   	$('.error').css('border-color','').removeClass('error)')
+			   }
+
+			   function clearnForm() {
+			   	$('#contact form').find("input[type=text], textarea").val("");
+			   }
+			</script>
 
 	</body>
 </html>
