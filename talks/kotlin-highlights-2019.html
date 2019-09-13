@@ -74,7 +74,7 @@
 		  
             <h1>Welcome, Kotlin/Everywhere Phx 2019!</h1>
 
-<p><img src="https://computeristsolutions.com/images/ke-slides-pic.png" alt="really nice KE slides template"></p>
+<p><img src="https://computeristsolutions.com/images/ke-slides-pic.jpg" alt="really nice KE slides template"></p>
 
 <h2>A few Kotlin tidbits and highlights</h2>
 
@@ -85,6 +85,8 @@
 <li>expressive and concise</li>
 <li>java interop</li>
 <li>supports functional style coding</li>
+<li>coroutines for async</li>
+<li>co-exist in your existing Java app</li>
 </ul>
 
 <h3>1. It&#39;s just JVM!</h3>
@@ -103,8 +105,11 @@
 <li>from JetBrains because they like the JVM but want to move faster</li>
 <li>purpose built for productivity with best features from multiple languages</li>
 <li>modernize features beyond what Java provides</li>
+<li>intentional interop</li>
 <li>developer happiness</li>
 </ul>
+
+<h2>- better generics</h2>
 
 <h3>3. Nullability, yeah, yeah...</h3>
 
@@ -120,11 +125,11 @@
 val myPercent = myMoney.amount.percent(33)</p></li>
 <li><p>..which is now a lot of the Kotlin standard library works</p></li>
 <li><p>you can extend operators, but there be dragons</p></li>
-<li><p>oh, yeah. nullability has to be explicit which avoids a large portion of null ref errors.</p></li>
-</ul>
+<li><p>oh, yeah. nullability has to be explicit which avoids a large portion of null ref errors.</p>
 
 <p>val name: String = &quot;josh&quot; // cannot be null
-  val name: String? = null // can be null and has to be checked before reading value</p>
+val name: String? = null // can be null and has to be checked before reading value</p></li>
+</ul>
 
 <h3>4. Simpler classes,</h3>
 
@@ -150,6 +155,14 @@ fun sendMoney(money: Money, message: String = &quot;&quot;) { .. }
 <li><p>lateinit is promise to provide a value later</p></li>
 </ul>
 
+<h2>Thank You!</h2>
+
+<p>Josh Coffman
+Tw: @4spacetabs
+Gh: /rebootd
+<a href="mailto:joshc@computerist.co">joshc@computerist.co</a>
+<a href="https://computerist.co">https://computerist.co</a></p>
+
 <h4>resources</h4>
 
 <ul>
@@ -160,7 +173,7 @@ fun sendMoney(money: Money, message: String = &quot;&quot;) { .. }
           </div>
         </div>
         <div class="demo-container mdl-grid font-weight-lighter">
-          last update: 2019-09-13 04:08:23 UTC
+          last update: 2019-09-13 04:20:10 UTC
         </div>
       </main>
     </div>
