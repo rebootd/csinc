@@ -87,7 +87,7 @@
 <li>they simplify asynch programming and replace callbacks</li>
 </ul>
 
-<p>```
+<p>```java<br>
 // sync code, blocking code
 fun loadData() {
     val data = networkRequest()
@@ -107,9 +107,8 @@ suspend fun loadData() {
     show(data)
 }</p>
 
-<p>// still uses new thread, but instad of blocking, it suspends and then resumes the coroutine</p>
-
-<p>```</p>
+<p>// still uses new thread, but instad of blocking, it suspends and then resumes the coroutine
+```</p>
 
 <ul>
 <li>Parrallel vs asynch.... concurrency vs non-blocking.</li>
@@ -131,7 +130,7 @@ suspend fun loadData() {
 </ul></li>
 </ul>
 
-<p>```
+<p>```java
 suspend fun networkRequest() {
     withContext(Dispathers.IO) { // safe with MAIN thread
         /* blocking code */
@@ -297,7 +296,7 @@ private val updateScope = MainScope()</p>
           </div>
         </div>
         <div class="demo-container mdl-grid font-weight-lighter">
-          last update: 2019-09-14 18:49:28 UTC
+          last update: 2019-09-14 19:58:12 UTC
         </div>
       </main>
     </div>
