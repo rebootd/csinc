@@ -149,18 +149,6 @@ suspend fun loadLots() {
 <pre><code>    private val updateScope = MainScope()
 
     suspend fun save(): T {
-        val deferred = updateScope.async { // unstructured launch
-            withTimeout(TIMEOUT) { // ensure completion or timeout
-                mutex.withLock { // consider concurrency
-                    api.post() // actual operation
-                }
-            }
-        }
-
-        return deferred.await() // inform caller of the work
-    }
-
-    suspend fun save(): T {
         val deferred = updateScope.async { // unstructured
             withTimeout(TIMEOUT) {  // wait until timeout
                 mutex.withLock { // concurrency aware
@@ -323,7 +311,7 @@ val image2 = deferred2.await()</p>
 
 
     <div class="demo-container mdl-grid font-weight-lighter">
-      last update: 2019-09-14 21:54:47 UTC
+      last update: 2019-09-14 21:57:44 UTC
     </div>
   </body>
 </html>
