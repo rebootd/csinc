@@ -144,9 +144,117 @@ suspend fun networkRequest() {
 }
 ```</p>
 
-<h2>- suspend functions are always MAIN safe</h2>
+<ul>
+<li>suspend functions are always MAIN safe</li>
+</ul>
+
+<p>```
+// a kotlin function for starting a suspend function, there are a few
+fun getToTheChopper() {
+    launch {
+        loadData()
+    }
+}</p>
+
+<p>suspend fun loadData() {
+    val data = networkRequest()
+    show(data)
+}</p>
+
+<ul>
+<li>but... who gets to cancel request and who gets exceptions</li>
+</ul>
 
 <h2>what are scopes</h2>
+
+<ul>
+<li>scope keeps track of your coroutines
+```</li>
+</ul>
+
+<p>val scope = MainScope()</p>
+
+<p>fun getToTheChopper() {
+    scope.launch {
+        loadData()
+    }
+}</p>
+
+<p>suspend fun loadData() {
+    val data = networkRequest()
+    show(data)
+}</p>
+
+<p>fun onClear() {
+    super.onCleared()
+    scope.cancel()
+}</p>
+
+<p>```</p>
+
+<ul>
+<li>NOTE: how to access launchers and dispatchers are evolving and getting simpler</li>
+<li>guarantee: when a suspend function returns it has completed all work</li>
+</ul>
+
+<p>```
+// using coroutineScope dispatches coroutine in the current scope
+suspend fun loadLots() {
+    coroutineScope {
+        repeat(1_000) {
+            launch { loadData() }
+        }
+    }
+}</p>
+
+<p>// but that coroutine scope is still active while any coroutine is still running
+// which means that coroutineScope only resumes calling coroutine when all 1_000 launched coroutines are finished
+```</p>
+
+<ul>
+<li>more scopes increase complexity, can address with structured concurrency
+
+<ul>
+<li>return when work is complete</li>
+<li>cancelling cancels all children</li>
+<li>scope is notified of error</li>
+</ul></li>
+<li>with unstructured concurrency, children continuing running when calling coroutine is cancelled. (um, dragons here)</li>
+</ul>
+
+<h2>structured concurrency</h2>
+
+<p>```
+private val updateScope = MainScope()</p>
+
+<p>suspend fun save(): T {
+    val deferred = updateScope.async { // unstructured launch
+        withTimeout(TIMEOUT) { // ensure completion or timeout
+            mutex.withLock { // consider concurrency
+                api.post() // actual operation
+            }
+        }
+    }</p>
+
+<pre><code>return deferred.await() // inform caller of the work
+</code></pre>
+
+<p>}</p>
+
+<p>suspend fun save(): T {
+    val deferred = updateScope.async { // unstructured
+        withTimeout(TIMEOUT) {
+            mutex.withLock { 
+                api.post() 
+            }
+        }
+    }</p>
+
+<pre><code>return deferred.await()
+</code></pre>
+
+<p>}
+```</p>
 
 <h2>what are channels</h2>
 
@@ -185,7 +293,7 @@ suspend fun networkRequest() {
           </div>
         </div>
         <div class="demo-container mdl-grid font-weight-lighter">
-          last update: 2019-09-14 18:12:48 UTC
+          last update: 2019-09-14 18:36:00 UTC
         </div>
       </main>
     </div>
