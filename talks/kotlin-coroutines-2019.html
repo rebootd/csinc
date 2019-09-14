@@ -87,7 +87,7 @@
 <li>they simplify asynch programming and replace callbacks</li>
 </ul>
 
-<p>```java<br>
+<p>```
 // sync code, blocking code
 fun loadData() {
     val data = networkRequest()
@@ -130,7 +130,7 @@ suspend fun loadData() {
 </ul></li>
 </ul>
 
-<p>```java
+<p>```
 suspend fun networkRequest() {
     withContext(Dispathers.IO) { // safe with MAIN thread
         /* blocking code */
@@ -158,7 +158,8 @@ fun getToTheChopper() {
 <p>suspend fun loadData() {
     val data = networkRequest()
     show(data)
-}</p>
+}
+```</p>
 
 <ul>
 <li>but... who gets to cancel request and who gets exceptions</li>
@@ -167,11 +168,11 @@ fun getToTheChopper() {
 <h2>what are scopes</h2>
 
 <ul>
-<li>scope keeps track of your coroutines
-```</li>
+<li>scope keeps track of your coroutines</li>
 </ul>
 
-<p>val scope = MainScope()</p>
+<p>```
+val scope = MainScope()</p>
 
 <p>fun getToTheChopper() {
     scope.launch {
@@ -242,9 +243,9 @@ private val updateScope = MainScope()</p>
 
 <p>suspend fun save(): T {
     val deferred = updateScope.async { // unstructured
-        withTimeout(TIMEOUT) {
-            mutex.withLock { 
-                api.post() 
+        withTimeout(TIMEOUT) {  // wait until timeout
+            mutex.withLock { // concurrency aware
+                api.post() // actual logic to exeute
             }
         }
     }</p>
@@ -256,10 +257,98 @@ private val updateScope = MainScope()</p>
 ```</p>
 
 <ul>
-<li>this is what it looks like, but where it&#39;s going is up to us</li>
+<li>this is what structured concurrency looks like, but where it&#39;s still improving</li>
 </ul>
 
-<h2>what are channels</h2>
+<h2>what are coroutine builders</h2>
+
+<p><code>
+fun launch(
+    context: CoroutineContext = DefaultDispatcher,
+    block: suspend () -&gt; Unit): Job { ... }
+</code></p>
+
+<ul>
+<li>launch
+
+<ul>
+<li>just a normal function that takes as one parameter a block of code that is marked as <em>suspend</em></li>
+<li>also returns a handle called <em>Job</em> in case you need a handle for the work</li>
+</ul></li>
+<li>purposely doesn&#39;t use <em>await</em> keyword because coroutines are designed to imitate <em>sequential</em> behavior so it&#39;s more familiar and clear</li>
+<li>async
+
+<ul>
+<li>just another function that takes a suspend function, and returns a result</li>
+<li>returns <em>Deferred<T></em> instead of just <em>T</em></li>
+</ul></li>
+</ul>
+
+<p>```
+fun loadImagesAsync(name: String): Deferred<Image> = async { .. }</p>
+
+<p>val deferred1 = loadImageAsync(name1)
+val deferred2 = loadImageAsync(name2)</p>
+
+<p>val image1 = deferred1.await()
+val image2 = deferred2.await()</p>
+
+<p>val result = combineImages(image1, image2)</p>
+
+<p>// instead, better kotlin code...</p>
+
+<p>suspend fun loadImage(name: String): Image {}</p>
+
+<p>suspend fun loadAndCombine(name1: String, name2: String): Image {
+    val deferred1 = async { loadImage(name1) }
+    val deferred2 = async { loadImage(name2) }
+    return combineImages(deferred1, deferred2)
+}</p>
+
+<p>```</p>
+
+<ul>
+<li>also <code>runBlocking</code> coroutine builder...
+
+<ul>
+<li>blocks main thread until its code completes</li>
+</ul></li>
+<li><em>thread</em> is yet another builder...</li>
+</ul>
+
+<h2>Coroutines are essentially very lightweight threads</h2>
+
+<ul>
+<li>this runs but blocks main thread from copmleting:</li>
+</ul>
+
+<p><code>
+fun main(args: Array&lt;String&gt;) = runBlocking&lt;Unit&gt; {
+    val jobs = List(100_000) {
+        launch {
+            delay(1000L)
+            print(&quot;.&quot;)
+        }
+    }
+    jobs.forEach { it.join() }
+}
+</code></p>
+
+<ul>
+<li>this runs with threading:</li>
+</ul>
+
+<p><code>
+fun main(args: Array&lt;String&gt;) {
+    val jobs = List(100_000) {
+        thread {
+            Thread.sleep(1000L)
+            print(&quot;.&quot;)
+        }
+    }
+    jobs.forEach { it.join() }
+}
+</code></p>
 
 <h2>how to use coroutines effectively</h2>
 
@@ -296,7 +385,7 @@ private val updateScope = MainScope()</p>
           </div>
         </div>
         <div class="demo-container mdl-grid font-weight-lighter">
-          last update: 2019-09-14 19:58:12 UTC
+          last update: 2019-09-14 20:22:55 UTC
         </div>
       </main>
     </div>
