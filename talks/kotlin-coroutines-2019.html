@@ -317,12 +317,11 @@ val image2 = deferred2.await()</p>
 
 <h2>Java interop with coroutines? Yep!</h2>
 
-<p><code>
-CompletableFuture&lt;Image&gt; loadImageAsync(String name) { .. }
-CompletableFuture&lt;Image&gt; loadAndCombineAsync(String name1, String name2) { .. }
-</code></p>
+<pre><code>    CompletableFuture&lt;Image&gt; loadImageAsync(String name) { .. }
+    CompletableFuture&lt;Image&gt; loadAndCombineAsync(String name1, String name2) { .. }
 
-<pre><code>    /// kotlin
+
+    /// kotlin
     fun loadAndCombine(name1: String, name2: String): CompletableFuture&lt;Image&gt; = future {
         val future1 = loadImageAsync(name1)
         val future2 = loadImageAsync(name2)
@@ -381,7 +380,7 @@ CompletableFuture&lt;Image&gt; loadAndCombineAsync(String name1, String name2) {
           </div>
         </div>
         <div class="demo-container mdl-grid font-weight-lighter">
-          last update: 2019-09-14 20:38:11 UTC
+          last update: 2019-09-14 21:42:48 UTC
         </div>
       </main>
     </div>
