@@ -78,14 +78,73 @@
 
 <h2>my goal for this talk</h2>
 
-<p>To help me understand Coroutines and convince the audience I already knew it the whole time, and that I&#39;m an expert 
-because I was willing to stand up and talk.</p>
-
-<p>Or, actually, to give a little overview so we can all see where they are useful and then help each other.</p>
+<p>to give a little overview so we can all see where they are useful and then help each other.</p>
 
 <h2>what are kotlin coroutines</h2>
 
+<ul>
+<li>coroutines are like lightweight threads, but not really threads</li>
+<li>they simplify asynch programming and replace callbacks</li>
+</ul>
+
+<p>```
+// sync code, blocking code
+fun loadData() {
+    val data = networkRequest()
+    show(data)
+}</p>
+
+<p>// asynch code with callback
+fun loadData() {
+    networkRequest { data -&gt;
+        show(data)
+    }
+}</p>
+
+<p>// asynch with coroutines
+suspend fun loadData() {
+    val data = networkRequest()
+    show(data)
+}</p>
+
+<p>// still uses new thread, but instad of blocking, it suspends and then resumes the coroutine</p>
+
+<p>```</p>
+
+<ul>
+<li>Parrallel vs asynch.... concurrency vs non-blocking.</li>
+<li>coroutines run asynch and wait for response before completing.</li>
+<li>can be run concurrently but only if you opt-in</li>
+</ul>
+
 <h2>what are suspending functions</h2>
+
+<ul>
+<li>functions that can be suspended and resumed</li>
+<li>suspend and resume are direct replacement for callbacks (rxjava, anyone?)</li>
+<li>kotlin gives us 3 main dispathers
+
+<ul>
+<li>Main        -&gt; used by everything</li>
+<li>IO          -&gt; used by networks and disk</li>
+<li>Default     -&gt; CPU .. because it&#39;s also usable on backend, not just android</li>
+</ul></li>
+</ul>
+
+<p>```
+suspend fun networkRequest() {
+    withContext(Dispathers.IO) { // safe with MAIN thread
+        /* blocking code */
+    }
+}</p>
+
+<p>suspend fun loadData() {
+    var data = retrofit.networkRequest() // coroutines supported by retrofit
+    show(data)
+}
+```</p>
+
+<h2>- suspend functions are always MAIN safe</h2>
 
 <h2>what are scopes</h2>
 
@@ -93,11 +152,40 @@ because I was willing to stand up and talk.</p>
 
 <h2>how to use coroutines effectively</h2>
 
+<ul>
+<li>use where you have code that needs to start and wait without interrupting rest of your code</li>
+<li>In Android: IO, Network requests, Database operations, image processing</li>
+<li>Server side: IO, Network requests, Database operations, long running processes, maybe streaming operations</li>
+<li>what else can you think of?</li>
+</ul>
+
+<h2>Thank You!</h2>
+
+<p>Josh Coffman
+<a href="https://twitter.com/4spacetabs">https://twitter.com/4spacetabs</a></p>
+
+<p><a href="https://github.com/rebootd">https://github.com/rebootd</a></p>
+
+<p><a href="mailto:joshc@computerist.co">joshc@computerist.co</a></p>
+
+<p><a href="https://computerist.co">https://computerist.co</a></p>
+
+<h4>resources</h4>
+
+<ul>
+<li><a href="https://github.com/Kotlin/workshop">https://github.com/Kotlin/workshop</a></li>
+<li><a href="https://www.youtube.com/watch?v=jT2gHPQ4Z1Q">https://www.youtube.com/watch?v=jT2gHPQ4Z1Q</a></li>
+<li><a href="https://www.youtube.com/watch?v=3FFFW6Q1WIc">https://www.youtube.com/watch?v=3FFFW6Q1WIc</a></li>
+<li><a href="https://youtu.be/lh2Vqt4DpHU">https://youtu.be/lh2Vqt4DpHU</a></li>
+<li><a href="https://youtu.be/_hfBv0a09Jc">https://youtu.be/_hfBv0a09Jc</a></li>
+<li><a href="https://youtu.be/jEavXjZXTac">https://youtu.be/jEavXjZXTac</a></li>
+</ul>
+
             
           </div>
         </div>
         <div class="demo-container mdl-grid font-weight-lighter">
-          last update: 2019-09-14 02:06:18 UTC
+          last update: 2019-09-14 18:12:48 UTC
         </div>
       </main>
     </div>
